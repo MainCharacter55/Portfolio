@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}404: SECTOR_NOT_FOUND{% endblock %}
+
+{% block contents %}
+<style>
+    /* Pulse effect on the 404 text */
+    .pulse-text {
+        animation: pulse 2s infinite;
+        text-shadow: 0 0 20px var(--text-color);
+        font-family: 'Courier New', monospace;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.05); opacity: 0.7; }
+        100% { transform: scale(1); opacity: 1; }
+    }
+
+    /* Typewriter effect for the header */
+    .typewriter-text {
+        overflow: hidden;
+        border-right: .15em solid var(--text-color);
+        white-space: nowrap;
+        margin: 0 auto;
+        letter-spacing: .15em;
+        animation: 
+            typing 3.5s steps(30, end),
+            blink-caret .75s step-end infinite;
+    }
+
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+    }
+
+    @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: var(--text-color); }
+    }
+
+    /* Terminal Box Styling */
+    .error-box {
+        background: var(--bg-color);
+        border-color: var(--text-color) !important;
+        box-shadow: 0 0 30px rgba(var(--text-color), 0.1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Blinking Cursor at the bottom */
+    .blink {
+        animation: blinker 1s linear infinite;
+        color: var(--text-color);
+    }
+
+    @keyframes blinker {
+        50% { opacity: 0; }
+    }
+
+    .full-page {
+        min-height: 80vh;
+    }
+</style>
+
+<section class="full-page d-flex align-items-center justify-content-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h1 class="display-1 fw-bold mb-0 pulse-text">
+                    404
+                </h1>
+                
+                <div class="d-inline-block">
+                    <h2 class="typewriter-text h4 text-uppercase mb-4">
+                        {% trans ">> ERROR: NODE_UNREACHABLE" %}
+                    </h2>
+                </div>
+                    
+                <div class="error-box p-4 border border-2 rounded-3 text-start font-monospace shadow-lg">
+
+                    <div class="d-flex gap-2 mb-3">
+                        <span class="badge bg-danger">{% trans "CRITICAL" %}</span>
+                        <span class="text-secondary">{% trans "# SESSION_ID: " %}{{ request.session.session_key|default:"ANONYMOUS_GHOST"|slice:":8" }}</span>
+                    </div>
+
+                    <p class="mb-1"><span class="text-white">//</span>{% trans " Attempting to access: " %}<span class="text-info">{{ request.path }}</span></p>
+                    <p class="mb-1"><span class="text-warning">[!]</span>{% trans " Status: 404 (Not Found)" %}</p>
+                    <p class="mb-1"><span class="text-success">[✓]</span>{% trans " Memory dump complete." %}</p>
+                    <p class="mb-3 text-secondary">
+                        {% trans ">> Your session has drifted into an unmapped sector of the mainframe. Data packets have been purged to prevent system corruption." %}
+                    </p>
+                    
+                    <p class="blink mb-0">{% trans "_ SYSTEM_WAITING_FOR_INPUT..." %}</p>
+                </div>
+
+                <div class="mt-5 d-flex flex-column flex-md-row gap-3 justify-content-center">
+                    <a href="{% url 'portfolio_app:home' %}" class="btn btn-solid px-4 py-2">
+                        <i class="fas fa-home me-2"></i>{% trans " RE-INITIALIZE_ROOT" %}
+                    </a>
+                    <a href="{% url 'portfolio_app:contact' %}" class="btn btn-outline-secondary custom-btn px-4 py-2" 
+                       style="border-color: var(--text-color) !important; color: var(--text-color) !important;">
+                        <i class="fas fa-bug me-2"></i>{% trans " REPORT_SYSTEM_GLITCH" %}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

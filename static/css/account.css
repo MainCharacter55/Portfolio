@@ -1,0 +1,188 @@
+/* ==========================
+   MY PAGE
+========================== */
+/* body.dark-mode .auth-card {
+    background-color: rgba(0, 0, 0, 0.8);
+} */
+
+/* Container that fills the screen to prevent footer jumping */
+.account-viewport {
+    min-height: calc(100vh - 70px); /* Subtracts navbar height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: var(--bg-color);
+    transition: background 0.3s ease;
+}
+
+/* The Matrix-style card */
+.auth-card {
+    width: 100%;
+    max-width: 550px;
+    /* Use the variable instead of hardcoded black */
+    background-color: var(--bg-color); 
+    border: 2px solid var(--text-color);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 15px var(--text-color);
+    color: var(--text-color);
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+/* Profile Info List */
+.profile-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.profile-item {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--text-color);
+    opacity: 0.9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-label {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.profile-value {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Red Pulsing Animation for Lockout/Delete */
+@keyframes pulse-red {
+    0% { box-shadow: 0 0 5px #ff4444; }
+    50% { box-shadow: 0 0 20px #ff4444; }
+    100% { box-shadow: 0 0 5px #ff4444; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .profile-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .auth-card {
+        padding: 1.5rem;
+    }
+}
+
+/* ==========================
+   CHANGE PASSWORD
+========================== */
+/* Add these to your account.css if not already there */
+.custom-form input {
+    width: 100%;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid var(--text-color) !important;
+    color: var(--text-color) !important;
+    padding: 8px 0;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.custom-form input:focus {
+    border-bottom-width: 3px !important;
+    box-shadow: 0 5px 10px -5px var(--text-color);
+}
+
+/* Ensure the checkmark icon and text align with the theme */
+.fa-check-circle {
+    color: var(--text-color);
+    text-shadow: 0 0 10px var(--text-color);
+}
+
+/* Ensure the 'Back' and 'Forgot' links align correctly */
+.fav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.fav-link:hover {
+    opacity: 0.7;
+    color: var(--text-color);
+}
+
+.text-danger {
+    color: #ff4444 !important;
+    text-shadow: 0 0 10px rgba(255, 68, 68, 0.6);
+}
+
+/* Fix for the "Red" logout/delete buttons */
+.btn-danger-terminal {
+    background: transparent !important;
+    border: 1px solid #ff4444 !important;
+    color: #ff4444 !important;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.btn-danger-terminal:hover {
+    background: #ff4444 !important;
+    color: #000 !important;
+    box-shadow: 0 0 10px #ff4444;
+}
+
+.del-btn {
+    background-color: #ff4444 !important;
+    border: none;
+    color: white !important;
+    font-weight: bold;
+    padding: 12px;
+}
+.del {
+    width: 50px;
+    height: 2px;
+    background-color: #ff4444;
+    margin-bottom: 15px;
+}
+
+.del-text {
+    color: #ff4444;
+    letter-spacing: 2px;
+}
+
+.del-fas {
+    color: #ff4444;
+    filter: drop-shadow(0 0 10px #ff4444);
+}
+
+.del-auth-card {
+    border-color: #ff4444;
+    box-shadow: 0 0 15px rgba(255, 68, 68, 0.3);
+}
+
+.del-acc a {
+    color: #ff4444 !important; /* Pure terminal red */
+    font-size: 0.9rem;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    opacity: 0.7;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.del-acc a:hover {
+    opacity: 1;
+    border-bottom: 1px solid #ff4444;
+    text-shadow: 0 0 8px #ff4444;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0px 1000px var(--bg-color) inset !important;
+    -webkit-text-fill-color: var(--text-color) !important;
+    transition: background-color 5000s ease-in-out 0s;
+}

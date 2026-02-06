@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}500: SYSTEM_HALTED{% endblock %}
+
+{% block contents %}
+<style>
+    .full-page { min-height: 80vh; }
+
+    .glitch-text {
+        position: relative;
+        animation: glitch 1.5s infinite;
+        letter-spacing: 10px;
+    }
+
+    @keyframes glitch {
+        0% { text-shadow: 2px 2px #ff0000; transform: translate(0); }
+        20% { text-shadow: -3px 0 #00ffff; transform: translate(-2px, 2px); }
+        40% { text-shadow: 3px 0 #ff00ff; transform: translate(2px, -2px); }
+        60% { text-shadow: -2px 0 #ff0000; transform: translate(-1px, 0); }
+        100% { text-shadow: 2px 2px #ff0000; transform: translate(0); }
+    }
+
+    .typewriter-text {
+        overflow: hidden;
+        border-right: .15em solid #ff0000;
+        white-space: nowrap;
+        margin: 0 auto;
+        letter-spacing: .15em;
+        animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+    }
+
+    @keyframes typing { from { width: 0 } to { width: 100% } }
+    @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #ff0000; } }
+
+    .blink { animation: blinker 1s linear infinite; }
+    @keyframes blinker { 50% { opacity: 0; } }
+
+    /* ADAPTIVE BOX LOGIC */
+    .error-box {
+        /* This uses your theme variables, with fallbacks for light/dark mode */
+        background-color: var(--bg-color, #f8f9fa); 
+        color: var(--text-color, #212529);
+        border-color: #ff0000 !important;
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    /* Target standard Bootstrap dark mode if you use data-bs-theme="dark" */
+    [data-bs-theme="dark"] .error-box {
+        background-color: rgba(20, 0, 0, 0.9);
+        color: #ffffff;
+    }
+
+    .btn-reboot {
+        background: transparent;
+        border: 1px solid #ff0000;
+        color: #ff0000;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        font-family: 'Courier New', monospace;
+    }
+
+    .btn-reboot:hover {
+        background: #ff0000;
+        color: #fff;
+        box-shadow: 0 0 15px #ff0000;
+    }
+</style>
+
+<section class="full-page d-flex align-items-center justify-content-center" style="background: linear-gradient(rgba(255,0,0,0.1), transparent);">
+    <div class="container text-center">
+        <h1 class="display-1 fw-bold text-danger glitch-text" style="font-family: 'Courier New', monospace;">
+            500
+        </h1>
+        
+        <div class="d-inline-block">
+            <h2 class="typewriter-text h4 text-uppercase mb-4" style="color: #ff0000;">
+                {% trans ">> CRITICAL_CORE_DUMP: SYSTEM_HALTED" %}
+            </h2>
+        </div>
+
+        <div class="error-box p-4 border border-2 rounded-3 text-start font-monospace shadow-lg text-body">
+            
+            <p class="text-danger mb-2"><strong>{% trans "[FATAL_EXCEPTION]" %}</strong></p>
+            <p class="mb-1">{% trans ">> Kernel panic at sector 0x88234" %}</p>
+            <p class="mb-1">{% trans ">> Logic integrity check: " %}<span class="text-danger">{% trans "FAILED" %}</span></p>
+            <p class="text-muted mb-3" style="font-size: 0.9rem;">
+                {% trans "The server encountered an internal breach or logic paradox. Our engineers have been notified of the disturbance in the Force." %}
+            </p>
+            
+            <div class="progress mb-3" style="height: 5px; background: rgba(255,0,0,0.1);">
+                <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" style="width: 100%"></div>
+            </div>
+            
+            <p class="blink mb-0" style="color: #ff0000;">{% trans "_ ATTEMPTING_RECOVERY..." %}</p>
+        </div>
+
+        <div class="mt-5">
+            <a href="{% url 'portfolio_app:home' %}" class="btn btn-reboot px-5 py-3">
+                {% trans "FORCE_REBOOT_TO_MAIN" %}
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

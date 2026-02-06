@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% load email_filters %}
+
+{% block title %}Contact | Mohan Khatri{% endblock %}
+
+{% block contents %}
+<section id="contact-page" class="py-5">
+    <div class="container">
+        <div class="text-center mb-5 pt-3">
+            <h1 class="display-1 fw-bold typewriter-text d-inline-block">{% trans "ESTABLISH_COMM_LINK" %}</h1>
+            <p class="fs-5 mt-3 text-uppercase">{% trans "PRIMARY_CHANNEL: DISCORD // SECONDARY: FORM_UPLINK" %}</p>
+        </div>
+
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-8 text-center">
+                <div class="d-flex justify-content-center gap-5 social-icons">
+                    <a class="nav-link" href="https://discord.com/users/835809414031212584" title="Discord"><i class="fab fa-discord fa-4x"></i></a>
+                    <a class="nav-link" href="{% url 'portfolio_app:contact' %}" title="GitHub"><i class="fab fa-github fa-4x"></i></a>
+                    <a class="nav-link" href="{% url 'portfolio_app:contact' %}" title="Instagram"><i class="fab fa-instagram fa-4x"></i></a>
+                    <a class="nav-link" href="{% url 'portfolio_app:contact' %}" title="LinkedIn"><i class="fab fa-linkedin fa-4x"></i></a>
+                    <a class="nav-link" href="{% url 'portfolio_app:contact' %}" title="YouTube"><i class="fab fa-youtube fa-4x"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-5">
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="contact-card p-4 shadow-lg border border-success">
+                    
+                    {% if user.is_authenticated %}
+                        <h3 class="mb-2 fw-bold text-uppercase">{% trans "ENCRYPT_&_TRANSMIT" %}</h3>
+                        
+                        <div class="mb-4 p-2 rounded border border-secondary">
+                            <small class="text-success d-block">
+                                <i class="fas fa-user-shield me-2"></i>{% trans "SENDER_IDENTITY_VERIFIED" %}
+                            </small>
+                            <span class="font-monospace">{{ request.user.email|mask_email }}</span>
+                        </div>
+
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert {% if message.tags == 'error' %}alert-danger{% else %}alert-success{% endif %} border-0 bg-dark text-{% if message.tags == 'error' %}danger{% else %}success{% endif %} small mb-4">
+                                    <i class="fas {% if message.tags == 'error' %}fa-exclamation-triangle{% else %}fa-check-circle{% endif %} me-2"></i>
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+
+                        <form method="post" class="custom-form">
+                            {% csrf_token %}
+                            {% for field in form %}
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold small text-uppercase opacity-75">{{ field.label }}</label>
+                                    {{ field }}
+                                    {% if field.errors %}
+                                        <div class="text-danger small mt-1 font-monospace">{{ field.errors }}</div>
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                            
+                            <div class="text-center mt-5">
+                                <button type="submit" class="btn btn-solid rounded-pill px-5 py-3 fw-bold w-100 text-uppercase">
+                                    <i class="fas fa-broadcast-tower me-2"></i>{% trans "BROADCAST" %}
+                                </button>
+                            </div>
+                        </form>
+
+                    {% else %}
+                        <div class="text-center py-5">
+                            <i class="fas fa-lock fa-4x text-danger mb-4"></i>
+                            <h3 class="text-danger fw-bold">{% trans "ACCESS_DENIED" %}</h3>
+                            <p class="text-secondary">{% trans "Please establish a secure session to use this uplink." %}</p>
+                            <div class="mt-4">
+                                <a href="{% url 'accounts:login' %}?next={{ request.path }}" class="btn btn-outline-success px-5 rounded-pill">
+                                    {% trans "LOGIN" %}
+                                </a>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+
+                {% if user.is_authenticated %}
+                <div class="mt-4 text-center">
+                    <form action="{% url 'accounts:logout' %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-link nav-link p-0 d-inline opacity-50">
+                            <i class="fas fa-power-off me-1"></i>{% trans "TERMINATE_SESSION" %}
+                        </button>
+                    </form>
+                </div>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

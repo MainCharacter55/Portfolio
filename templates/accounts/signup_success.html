@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Sign Up Request Sent" %}{% endblock %}
+
+{% block header %}
+<link rel="stylesheet" href="{% static 'css/account.css' %}">
+{% endblock %}
+
+{% block contents %}
+<div class="account-viewport">
+    <div class="auth-card">
+        <h2 class="text-center mb-4">>> {% trans "REGISTRATION_INITIALIZED" %}</h2>
+        
+        <div class="profile-list">
+            <div class="profile-item">
+                <span class="profile-label">{% trans "STATUS" %}:</span>
+                <span class="profile-value text-warning">{% trans "AWAITING_UPLINK" %}</span>
+            </div>
+        </div>
+
+        <p class="mt-3">
+            {% trans "A verification sequence has been dispatched to your registered email address." %}
+        </p>
+        <p class="text-info">
+            {% trans "Please execute the activation link within the signal to enable your system access." %}
+        </p>
+
+        <div class="mt-4 text-center">
+            <a href="{% url 'accounts:login' %}" >
+                <button type="submit" class="btn btn-solid w-100 py-2 mb-4">{% trans "RETURN_TO_LOGIN" %}</button>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

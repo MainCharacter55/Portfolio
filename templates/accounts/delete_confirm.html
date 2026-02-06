@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Accound Deletion" %}{% endblock %}
+
+{% block header %}
+<link rel="stylesheet" href="{% static 'css/account.css' %}">
+{% endblock %}
+
+{% block contents %}
+<div class="account-viewport">
+    <div class="del-auth-card auth-card">
+        <div class="text-center mb-4">
+            <i class="fas del-fas fa-exclamation-triangle fa-4x mb-3"></i>
+            <h2 class="del-text text-uppercase fw-bold">
+                {% trans "EXECUTE_SYSTEM_WIPE" %}
+            </h2>
+            <div class="mx-auto del"></div>
+            <p class="small opacity-75">
+                {% trans "CRITICAL: Operation is destructive. Data packets cannot be recovered post-execution." %}
+            </p>
+        </div>
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="d-grid gap-3">
+                <button type="submit" class="del-btn btn btn-solid">
+                    {% trans "SUDO_PURGE_NODE" %}
+                </button>
+                
+                <a href="{% url 'accounts:mypage' %}" class="fav-link text-center mt-2" style="color: var(--text-color);">
+                    {% trans "ABORT_COMMAND // ESCAPE" %}
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

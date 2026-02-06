@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "SYSTEM_EXPANSION" %}{% endblock %}
+
+{% block contents %}
+<section class="full-page d-flex align-items-center justify-content-center text-center">
+    <div class="container">
+        <div class="d-flex justify-content-center mb-4">
+            <h1 class="display-1 typewriter-text">{% trans "403: SECTOR_LOCKED" %}</h1>
+        </div>
+        
+        <div class="coming-soon-box p-5 border rounded">
+            <h2 class="mb-3">{% trans "ENCRYPTED_DATA_DETECTED" %}</h2>
+            <p class="lead mb-4">
+                {% trans "System administrators are currently populating these database tables." %}<br>
+                <span class="text-muted">{% trans "Projected completion: Q2 2026" %}</span>
+            </p>
+            
+            <div class="progress mb-4">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" 
+                     role="progressbar" style="width: 65%"></div>
+            </div>
+
+            <a href="{% url 'portfolio_app:home' %}" class="btn custom-btn btn-lg">
+                <i class="fas fa-undo-alt me-2"></i>{% trans "RETURN_TO_ROOT" %}
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

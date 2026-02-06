@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}About Me | Mohan Khatri{% endblock %}
+
+{% block contents %}
+<div class="about-container container-fluid">
+    <div class="row g-0 min-vh-100">
+        <div class="col-lg-5 d-flex flex-column justify-content-center p-5 container-alignment">
+            <h1 class="display-2 fw-bold mb-4">{% trans "IDENTITY_FILE" %}</h1>
+            <div class="bio-details fs-5">
+                <p><strong>{% trans "DESIGNATION:" %}</strong> {% trans "MOHAN_KHATRI" %}</p>
+                <p><strong>{% trans "INITIALIZED" %}:</strong> {% trans "2006" %}</p>
+                <p><strong>{% trans "ORIGIN_LOC" %}:</strong> {% trans "NEPAL" %}</p>
+                <p><strong>{% trans "CURRENT_LOC" %}:</strong> {% trans "JAPAN" %}</p>
+                <p><strong>{% trans "UPLINK_PROTOCOLS:" %}</strong> {% trans "JAPANESE, ENGLISH, NEPALI, HINDI" %}</p>
+                <p><strong>{% trans "TECH_STACK:" %}</strong> {% trans "PYTHON, JAVA, JAVASCRIPT, C" %}</p>
+            </div>
+
+            <div>
+                <a href="{% static 'docs/resume.pdf' %}" class="btn btn-solid rounded-pill px-5 py-3 fw-bold shadow-lg">{% trans "EXTRACT_CV.EXE" %}</a>
+                <a href="{% static 'docs/自己pr.pdf' %}" class="btn btn-solid rounded-pill px-5 py-3 fw-bold shadow-lg">{% trans "CORE_VALUES // PR" %}</a>
+            </div>
+        </div>
+
+        <div class="col-lg-7 timeline-wrapper">
+            <div class="timeline-scroll-body">
+                <div class="timeline-line"></div>
+                <div class="timeline-item">
+                    <div class="node"></div>
+                    <div class="content">
+                        <span class="year">2006</span>
+                        <h3>{% trans "BORN_IN_NEPAL" %}</h3>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="node"></div>
+                    <div class="content">
+                        <span class="year">2016</span>
+                        <h3>{% trans "STARTED_LIVING_IN_JAPAN" %}</h3>
+                        <p>{% trans "(NEPALI_SCHOOL)" %}</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="node"></div>
+                    <div class="content">
+                        <span class="year">2020</span>
+                        <h3>{% trans "JUNIOR_HIGH_SCHOOL" %}</h3>
+                        <p>{% trans "(JAPANESE_SCHOOL)" %}</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="node"></div>
+                    <div class="content">
+                        <span class="year">2022</span>
+                        <h3>{% trans "HIGH_SCHOOL" %}</h3>
+                        <p>{% trans "(ELECTRONIC)" %}</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="node"></div>
+                    <div class="content">
+                        <span class="year">2025</span>
+                        <h3>{% trans "VOCATIONAL_SCHOOL" %}</h3>
+                        <p>{% trans "(SYSTEM_DEVELOPMENT)" %}</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="node"></div>
+                    <div class="content">
+                        <span class="year">{% trans "NOW" %}</span>
+                        <h3>{% trans "STATUS:EXECUTING_PRESENT_01" %}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
