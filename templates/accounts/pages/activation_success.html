@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "ACCOUNT_ACTIVATION_STATUS" %}{% endblock %}
+
+{% block navbar %}{% endblock %}
+{% block footer %}{% endblock %}
+
+{% block contents %}
+<div class="auth-page">
+    <div class="auth-card">
+        {% if activation_status == 'activated' %}
+            <h2 class="text-center text-uppercase fw-bold mb-4 text-success">
+                &gt;&gt; {% trans "UPLINK_ESTABLISHED" %}
+            </h2>
+            <p class="text-center mb-4">
+                {% trans "SIGNAL_CONFIRMED: Your account is now active." %}
+            </p>
+            <a href="{% url 'accounts:login' %}" class="btn btn-solid w-100 py-2 mb-3">
+                {% trans "ACCESS_CORE" %}
+            </a>
+        {% elif activation_status == 'already_active' %}
+            <h2 class="text-center text-uppercase fw-bold mb-4">
+                &gt;&gt; {% trans "NODE_ALREADY_ACTIVE" %}
+            </h2>
+            <p class="text-center mb-4">
+                {% trans "STATUS_OK: This account was already activated." %}
+            </p>
+            <a href="{% url 'accounts:login' %}" class="btn btn-solid w-100 py-2 mb-3">
+                {% trans "ACCESS_CORE" %}
+            </a>
+        {% else %}
+            <i class="fas fa-skull-crossbones fa-3x mb-3 d-block text-center"></i>
+            <h2 class="text-center text-uppercase fw-bold mb-4 reset-fail-title">{% trans "LINK_INTEGRITY_COMPROMISED" %}</h2>
+            <p class="text-center text-danger mb-4 reset-fail-copy">
+                {% trans "CRITICAL: Link signature is invalid or TTL has reached 0." %}
+            </p>
+
+            <a href="{% url 'accounts:resend_activation' %}" class="btn btn-solid w-100 py-2 mb-3">
+                {% trans "RE-GENERATE_ACTIVATION_LINK" %}
+            </a>
+            <a href="{% url 'accounts:signup' %}" class="btn btn-outline-danger w-100 py-2 mb-3">
+                {% trans "RE-INITIALIZE_SIGNUP" %}
+            </a>
+        {% endif %}
+
+        <a href="{% url 'portfolio_app:home' %}" class="fav-link d-inline-block text-center w-100">
+            {% trans "RETURN_TO_ROOT" %}
+        </a>
+    </div>
+</div>
+{% endblock %}

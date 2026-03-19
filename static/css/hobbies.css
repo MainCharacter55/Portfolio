@@ -1,0 +1,270 @@
+/* static/css/hobbies.css */
+
+.hobbies-main-wrapper {
+    scroll-snap-type: none !important;
+    height: auto !important;
+    overflow: visible !important;
+}
+
+.hobby-slide {
+    min-width: 100vw;
+    max-width: 100vw;
+    height: 100%;
+    min-height: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.hero-center {
+    text-align: center;
+    width: 100%;
+    padding: 0 24px;
+}
+
+.hero-center h1 {
+    margin: 0;
+    width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.hobbies-main-wrapper .hobbies-snap-section {
+    width: 100%;
+    overflow: hidden;
+}
+
+.hobbies-main-wrapper .hobbies-snap-section.horizontal-snap {
+    overflow: auto hidden;
+}
+
+.horizontal-snap {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 0;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.horizontal-snap::-webkit-scrollbar {
+    display: none;
+}
+
+.hobby-content-container {
+    display: flex;
+    width: 80%;
+    max-width: 1100px;
+    height: 60vh;
+    border: 1px solid var(--text-color);
+    box-shadow: var(--text-color);
+    border-radius: 15px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    margin-top: 4rem;
+}
+
+.hobby-image-side {
+    flex: 1;
+    overflow: hidden;
+}
+
+.hobby-image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.hobby-content-container:hover .hobby-image-side img {
+    transform: scale(1.05);
+}
+
+.hobby-text-side {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hobby-text-side h3 {
+    color: var(--text-color);
+    text-shadow: 0 0 10px var(--text-color);
+    margin-bottom: 20px;
+}
+
+.hobby-text-side p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+@media (width <= 991px) {
+    .hobbies-main-wrapper .hobbies-snap-section {
+        height: var(--viewport-block-size);
+        min-height: var(--viewport-block-size);
+        margin-top: 0;
+        padding-top: 0;
+        scroll-margin-top: 0;
+        box-sizing: border-box;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+    }
+
+    .hobbies-main-wrapper .hobbies-snap-section.horizontal-snap {
+        overflow: auto hidden;
+    }
+
+    .hobbies-main-wrapper .hobby-content-container {
+        flex-direction: column;
+        height: min(74dvh, 740px);
+        width: 90%;
+        min-height: 0;
+        margin: 12px 0;
+    }
+
+    .hobbies-main-wrapper .hobby-image-side {
+        order: 1;
+        width: 100%;
+        height: 230px;
+    }
+
+    .hobbies-main-wrapper .hobby-text-side {
+        order: 2;
+        padding: 1rem;
+        justify-content: center;
+    }
+
+    .hobbies-main-wrapper .hobby-slide {
+        height: 100%;
+        min-height: 100%;
+        padding: clamp(0.5rem, 2.2dvh, 1rem) 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hobbies-main-wrapper .hobbies-footer-sync .row {
+        padding-top: 0.25rem;
+        width: min(94vw, 560px) !important;
+        margin-inline: auto;
+    }
+
+    /* Phone-only size adjustment without changing iframe structure. */
+    .hobbies-main-wrapper .hobbies-footer-sync .spotify-wrapper {
+        max-width: min(92vw, 380px);
+    }
+
+    .hero-center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        min-height: 100%;
+        padding: 0 16px;
+    }
+
+    .hero-center h1 {
+        font-size: clamp(2rem, 9vw, 3rem);
+        line-height: 1.15;
+        text-align: center;
+    }
+
+    .hero-center p {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hobbies-main-wrapper .hobbies-footer-sync.full-page {
+        min-height: auto !important;
+        height: auto !important;
+        padding-top: 1rem !important;
+        padding-bottom: 1.5rem !important;
+        justify-content: flex-start !important;
+    }
+
+}
+
+@media (width >= 992px) {
+    .hobbies-main-wrapper .hobbies-snap-section.horizontal-snap {
+        height: auto;
+        min-height: var(--viewport-block-size);
+        overflow-y: visible;
+        align-items: stretch;
+    }
+
+    .hobby-slide {
+        height: auto;
+        min-height: 100%;
+        padding: clamp(1.5rem, 4dvh, 3rem) 0;
+    }
+
+    .hobby-content-container {
+        height: auto;
+        min-height: clamp(430px, 58dvh, 700px);
+    }
+
+    .hobby-text-side {
+        justify-content: center;
+        padding: clamp(1.2rem, 2.4vw, 2.2rem);
+    }
+
+    .hobbies-footer-sync {
+        padding: clamp(2rem, 5dvh, 4rem) 0;
+        min-height: var(--viewport-content-size) !important;
+        height: auto !important;
+        align-items: center;
+        overflow-y: visible;
+        scroll-snap-align: none !important;
+        scroll-snap-stop: normal !important;
+    }
+
+    .hobbies-footer-sync .row {
+        min-height: 100%;
+        margin: 0 auto;
+        align-items: center;
+        place-content: center;
+        width: min(1100px, 92%) !important;
+        row-gap: 0.9rem !important;
+    }
+
+    .hobbies-footer-sync .display-1 {
+        font-size: clamp(2.1rem, 3.5vw, 3.4rem);
+        margin-bottom: 0;
+    }
+}
+
+/* Keep a desktop-like layout on PC zoom even when CSS width drops below 992px. */
+@media (width <= 991px) and (hover: hover) and (pointer: fine) {
+    .hobbies-main-wrapper .hobbies-snap-section {
+        height: auto;
+        min-height: var(--viewport-block-size);
+        margin-top: 0;
+        padding-top: 0;
+        overflow-y: visible;
+    }
+
+    .hobby-slide {
+        height: auto;
+        min-height: 100%;
+        padding: clamp(1rem, 3dvh, 2rem) 0;
+    }
+
+    .hobby-content-container {
+        flex-direction: row;
+        width: min(94vw, 1100px);
+        height: auto;
+        min-height: clamp(420px, 56dvh, 680px);
+        margin: 0;
+    }
+
+    .hobby-image-side {
+        height: auto;
+    }
+}

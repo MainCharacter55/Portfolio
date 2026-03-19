@@ -1,0 +1,499 @@
+/* static/css/layout.css */
+
+/* ================================================
+   LAYOUT & RESPONSIVE DESIGN
+   Grid, page structure, responsive rules, animations
+================================================ */
+
+/* ==========================
+   PAGE STRUCTURE
+========================== */
+html, body {
+    height: 100%;
+}
+
+:root {
+    --navbar-height: 60px;
+    --viewport-block-size: 100dvh;
+    --viewport-content-size: calc(var(--viewport-block-size) - var(--navbar-height));
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+main /* or whatever wrapper holds page content */ {
+    flex: 1 0 auto;    /* grow to fill available space */
+    padding-top: 0;
+}
+
+.site-main,
+.page-main,
+.content-wrapper {
+    flex: 1 0 auto;
+    width: 100%;
+}
+
+#hero {
+    padding-top: 0;
+    min-height: var(--viewport-block-size);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.full-page {
+    position: relative;
+}
+
+.viewport-main-page {
+    min-height: var(--viewport-content-size);
+    box-sizing: border-box;
+}
+
+#contact-page.viewport-main-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(var(--navbar-height) + clamp(0.75rem, 2dvh, 1.25rem)) 0 clamp(1.25rem, 3dvh, 2rem);
+}
+
+#contact-page.viewport-main-page :where(.container) {
+    width: 100%;
+}
+
+.account-viewport.viewport-main-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(var(--navbar-height) + clamp(0.75rem, 2dvh, 1.25rem)) 20px clamp(1.5rem, 3dvh, 2.5rem);
+}
+
+.about-container.viewport-main-page {
+    padding-top: var(--navbar-height);
+}
+
+/* footer – optional, but ensure it never overlaps */
+footer {
+    margin-top: auto;
+    flex-shrink: 0;
+}
+
+/* Standalone auth pages (login/signup) */
+body.auth-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+.auth-page {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* ==========================
+   SHOWCASE & CARDS
+========================== */
+#showcase {
+    min-height: auto;
+    height: auto;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    display: block;
+}
+
+#showcase.normal-scroll {
+    min-height: auto;
+    height: auto;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.horizontal-scroll-wrapper {
+    display: flex;
+    overflow-x: auto;
+    gap: var(--spacing-md);
+    padding: 20px 0;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-color) transparent;
+}
+
+/* ==========================
+   ANIMATIONS
+========================== */
+.typewriter-text {
+    overflow: hidden;
+    border-right: 0.15em solid var(--accent-color);
+    white-space: nowrap;
+    animation: typing 5.5s steps(30, end) infinite,
+              blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    0%, 100% {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: var(--accent-color);
+    }
+}
+
+/* ==========================
+   DESKTOP LAYOUT (992px+)
+========================== */
+@media (width >= 992px) {
+    html.snap-desktop {
+        scroll-snap-type: y proximity;
+        scroll-behavior: smooth;
+        scroll-padding-top: 0;
+    }
+
+    html.snap-desktop .snap-section {
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        height: var(--viewport-block-size);
+        min-height: var(--viewport-block-size);
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+    }
+
+    #hero {
+        min-height: var(--viewport-block-size);
+    }
+
+    #showcase {
+        scroll-snap-align: none;
+        height: auto !important;
+        min-height: var(--viewport-content-size);
+        display: block;
+        padding-top: clamp(1.75rem, 4dvh, 3rem);
+        padding-bottom: clamp(2rem, 5dvh, 4rem);
+    }
+
+    /* Last sections must stay at least viewport content height; footer adds extra height. */
+    #showcase.home-showcase,
+    .hobbies-footer-sync {
+        min-height: var(--viewport-content-size) !important;
+        height: auto !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: clamp(2rem, 5dvh, 4rem);
+        padding-bottom: clamp(2rem, 5dvh, 4rem);
+        overflow-y: visible;
+        scroll-snap-align: none !important;
+        scroll-snap-stop: normal !important;
+        margin-top: 0 !important;
+    }
+
+    #showcase.home-showcase .container,
+    .hobbies-footer-sync .row {
+        width: min(1200px, 100%);
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    #hobbies-split {
+        scroll-snap-align: start;
+        scroll-snap-stop: normal;
+        overflow: hidden;
+    }
+
+    #showcase.home-showcase {
+        border-top: 0;
+    }
+
+    footer {
+        height: auto;
+        min-height: 10vh;
+    }
+
+    .timeline-wrapper {
+        height: 100vh;
+        overflow-y: auto;
+        padding: 0;
+    }
+
+    /* About page: keep both columns balanced on wide/zoomed-out desktops */
+    .about-container {
+        padding-top: var(--navbar-height);
+        padding-bottom: clamp(1.5rem, 3dvh, 2.5rem);
+    }
+
+    .about-container .row {
+        min-height: var(--viewport-content-size);
+        max-width: min(1400px, 96vw);
+        margin: 0 auto;
+        align-items: center;
+    }
+
+    .about-container .row > [class*="col-"] {
+        min-width: 0;
+    }
+
+    .about-container .container-alignment {
+        padding: clamp(1.5rem, 2.8vw, 3rem) !important;
+    }
+
+    .about-container .timeline-wrapper {
+        height: auto;
+        max-height: none;
+        overflow-y: visible;
+        padding-inline: clamp(0.75rem, 1.8vw, 1.5rem);
+    }
+
+    .about-container .timeline-scroll-body {
+        --timeline-axis: clamp(2.4rem, 4.2vw, 3.9rem);
+        --timeline-node-size: 22px;
+        --timeline-content-gap: 3rem;
+
+        padding: clamp(2rem, 5dvh, 4rem) 0;
+    }
+
+    .about-container .timeline-line {
+        left: calc(var(--timeline-axis) - 1px) !important;
+        width: 2px;
+        transform: none !important;
+        top: clamp(2rem, 5dvh, 4rem);
+        bottom: clamp(2rem, 5dvh, 4rem);
+    }
+
+    .about-container .timeline-item {
+        position: relative;
+        display: block;
+        padding-left: 0;
+        margin-bottom: clamp(2rem, 6dvh, 4rem);
+    }
+
+    .about-container .node {
+        position: absolute;
+        left: calc(var(--timeline-axis) - (var(--timeline-node-size) / 2)) !important;
+        transform: none !important;
+        transform-origin: center center;
+        top: 0.35rem;
+        width: var(--timeline-node-size);
+        height: var(--timeline-node-size);
+        box-sizing: border-box;
+        margin: 0;
+        border-width: 2px;
+    }
+
+    .about-container .timeline-item .content {
+        margin-left: calc(var(--timeline-axis) + var(--timeline-content-gap));
+    }
+
+    .about-container .timeline-item:hover .node {
+        transform: scale(1.2) !important;
+    }
+}
+
+/* ==========================
+   MOBILE LAYOUT (≤ 991px)
+========================== */
+@media (width <= 991px) {
+    html {
+        scroll-snap-type: none;
+    }
+
+    html.snap-mobile-hobbies {
+        scroll-snap-type: y proximity;
+        scroll-padding-top: 0;
+        scroll-behavior: smooth;
+    }
+
+    html.snap-mobile-hobbies .hobbies-snap-section {
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        min-height: var(--viewport-block-size);
+        height: var(--viewport-block-size);
+        box-sizing: border-box;
+    }
+
+    body.page-home #hero.snap-section,
+    body.page-home #about.snap-section,
+    body.page-home #hobbies-split.snap-section {
+        min-height: var(--viewport-block-size);
+        height: var(--viewport-block-size);
+    }
+
+    html.snap-mobile-hobbies .hobbies-footer-sync {
+        scroll-snap-align: none;
+        scroll-snap-stop: normal;
+    }
+
+    .full-page {
+        height: auto !important;
+        margin-top: 0;
+        min-height: auto;
+        padding-top: 0;
+    }
+
+    .about-container .row {
+        margin-top: 0;
+        display: block;
+    }
+
+    #hobbies-split .row {
+        flex-direction: column;
+        margin-top: 0;
+    }
+
+    #showcase.home-showcase {
+        margin-top: 0 !important;
+    }
+
+    #hobbies-split .col-6 {
+        width: 100%;
+        height: 40vh;
+        border-bottom: 2px solid var(--text-color);
+    }
+
+    #hobbies-split .translate-middle {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        margin: -25px auto 20px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .cloud-container img {
+        max-width: 250px;
+        margin-bottom: 20px;
+    }
+
+    .display-1 { font-size: 3rem; }
+    .display-2 { font-size: 2.5rem; }
+    .display-3 { font-size: 2rem; }
+
+    .navbar .dropdown-menu {
+        position: fixed;
+        top: 60px;
+        right: 15px;
+        left: auto;
+        width: 220px;
+        z-index: 2000;
+    }
+
+    .navbar-nav .dropdown {
+        position: static;
+    }
+
+    .timeline-wrapper {
+        height: auto;
+        max-height: none;
+        overflow-y: visible;
+        padding: 50px 0;
+    }
+
+    .timeline-scroll-body {
+        --timeline-axis: 20px;
+        --timeline-node-size: 16px;
+
+        padding: 70px 0 50px;
+    }
+
+    .timeline-line {
+        left: var(--timeline-axis);
+        top: 70px;
+        bottom: 60px;
+    }
+
+    .timeline-item {
+        position: relative;
+        display: block;
+        padding-left: calc(var(--timeline-axis) + 50px);
+        margin-bottom: 70px;
+    }
+
+    .node {
+        position: absolute;
+        left: calc(var(--timeline-axis) - (var(--timeline-node-size) / 2));
+        top: 0.35rem;
+        width: var(--timeline-node-size);
+        height: var(--timeline-node-size);
+        margin-right: 0;
+        border-width: 2px;
+    }
+
+    .timeline-item h3 {
+        line-height: 1.15;
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+    #contact-page.viewport-main-page {
+        min-height: var(--viewport-content-size);
+        padding-top: calc(var(--navbar-height) + 1rem);
+    }
+
+    .spotify-wrapper {
+        margin-bottom: 30px;
+    }
+}
+
+/* ==========================
+   SMALL SCREENS (≤ 576px)
+========================== */
+@media (width <= 576px) {
+    .profile-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .auth-card {
+        padding: 1.5rem;
+    }
+
+    .timeline-item h3 {
+        font-size: 2rem;
+    }
+
+    .timeline-item p,
+    .year {
+        font-size: 1rem;
+    }
+}
+
+/* ==========================
+   UTILITY CLASSES
+========================== */
+.z-index-10 {
+    z-index: 10;
+}
+
+/* Optional: Subtle scanline effect */
+.full-page::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgb(18 16 16 / 0%) 50%, rgb(0 0 0 / 10%) 50%),
+                linear-gradient(90deg, rgb(255 0 0 / 2%), rgb(0 255 0 / 1%), rgb(0 0 255 / 2%));
+    z-index: 2;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+}

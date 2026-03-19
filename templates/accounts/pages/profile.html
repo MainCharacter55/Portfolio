@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "My Profile" %}{% endblock %}
+{% block body_class %}page-profile{% endblock %}
+
+{% block contents %}
+<div class="account-viewport viewport-main-page">
+    <div class="auth-card">
+        <div class="text-center mb-4">
+            <i class="fas fa-user-circle fa-4x mb-2"></i>
+            <h2 class="text-uppercase fw-bold">{% trans "USER_STATION_01" %}</h2>
+            <p class="small opacity-75">{% trans "UPLINK_STATUS: ACTIVE" %}</p>
+        </div>
+
+        <ul class="profile-list">
+            <li class="profile-item">
+                <span class="profile-label">{% trans "Username" %}</span>
+                <span class="profile-value">{{ user.username }}</span>
+            </li>
+            <li class="profile-item">
+                <span class="profile-label">{% trans "Email Address" %}</span>
+                <span class="profile-value">
+                    {% if user.email %}{{ user.email }}{% else %}---{% endif %}
+                </span>
+            </li>
+            <li class="profile-item">
+                <span class="profile-label">{% trans "Date Joined" %}</span>
+                <span class="profile-value">{{ user.date_joined|date:"Y-m-d" }}</span>
+            </li>
+        </ul>
+
+        <div class="mt-4 d-grid gap-3">
+            <a href="{% url 'accounts:password_change' %}" class="btn btn-solid">
+                <i class="fas fa-key me-2"></i>{% trans "Change Password" %}
+            </a>
+            
+            <form action="{% url 'accounts:logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-solid w-100 btn-danger-terminal">
+                    <i class="fas fa-sign-out-alt me-2"></i>{% trans "System Logout" %}
+                </button>
+            </form>
+
+            <div class="text-center mt-3 del-acc">
+                <a href="{% url 'accounts:delete_account' %}">
+                    <i class="fas fa-user-times me-1"></i> {% trans "Request Account Deletion" %}
+                </a>
+            </div>
+        </div>
+
+        
+
+        <div class="text-center mt-4 pt-3 border-top border-secondary">
+            <a href="{% url 'portfolio_app:home' %}" class="fav-link">
+                <i class="fas fa-arrow-left me-1"></i> {% trans "EXIT_TO_ROOT" %}
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

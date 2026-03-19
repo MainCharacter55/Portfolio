@@ -1,0 +1,94 @@
+/* static/css/theme.css */
+
+/* ================================================
+   THEME VARIABLES & RESET
+   All colors, spacing, typography, and design tokens
+================================================ */
+
+:root {
+    /* Colors - Light Mode */
+    --bg-color: #fff;
+    --text-color: #007BFF;
+    --accent-color: #007BFF;
+    --danger-color: #e53935;
+    --dropdown-bg: #eaf2ff;
+    --terminal-green: #0f6;
+    --navbar-bg: #000;
+    --footer-bg: #000;
+    --footer-text: #fff;
+    --contact-card-bg: rgb(10 24 12 / 92%);
+    --contact-card-border: rgb(0 255 102 / 45%);
+    --contact-card-shadow: rgb(0 255 102 / 18%);
+    --contact-input-bg: rgb(0 0 0 / 45%);
+    --contact-input-text: #c9ffd8;
+    --contact-input-placeholder: rgb(201 255 216 / 72%);
+    
+    /* Spacing */
+    --spacing-xs: 5px;
+    --spacing-sm: 12px;
+    --spacing-md: 20px;
+    --spacing-lg: 40px;
+    
+    /* Typography */
+    --font-family: 'Segoe UI', tahoma, geneva, verdana, sans-serif;
+    --font-monospace: 'Courier New', courier, monospace;
+    
+    /* Transitions */
+    --transition-fast: 0.2s;
+    --transition-normal: 0.3s;
+    --transition-slow: 0.5s;
+    
+    /* z-index layers */
+    --z-navbar: 10000;
+    --z-dropdown: 2000;
+    --z-modal: 1050;
+}
+
+body.dark-mode {
+    /* Colors - Dark Mode */
+    --bg-color: #000;
+    --text-color: #00FF41;
+    --accent-color: #00FF41;
+    --danger-color: #ff4d4f;
+    --dropdown-bg: #2c2c2c;
+    --terminal-green: #0f6;
+    --navbar-bg: #000;
+    --footer-bg: #000;
+    --footer-text: #fff;
+    --contact-card-bg: rgb(10 24 12 / 92%);
+    --contact-card-border: rgb(0 255 102 / 45%);
+    --contact-card-shadow: rgb(0 255 102 / 18%);
+    --contact-input-bg: rgb(0 0 0 / 45%);
+    --contact-input-text: #c9ffd8;
+    --contact-input-placeholder: rgb(201 255 216 / 72%);
+}
+
+/* Reset & Normalize */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background var(--transition-normal), color var(--transition-normal);
+    font-family: var(--font-family);
+    overflow-x: hidden;
+}
+
+/* Base Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+a {
+    color: var(--text-color);
+    transition: opacity var(--transition-fast);
+}
+
+a:hover {
+    opacity: 0.8;
+}

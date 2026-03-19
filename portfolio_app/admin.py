@@ -1,4 +1,4 @@
-#portfolio_app/admin.py
+# portfolio_app/admin.py
 # ----------------------------------------------------------------------------------------------------
 
 from django.contrib import admin

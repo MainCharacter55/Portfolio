@@ -1,6 +1,4 @@
 # PortfolioProject/urls.py
-# ----------------------------------------------------------------------------------------------------
-
 """
 URL configuration for PortfolioProject project.
 
@@ -17,16 +15,16 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+# ----------------------------------------------------------------------------------------------------
+
 from django.contrib import admin
 from django.urls import path, include
-from django.conf.urls.i18n import i18n_patterns
-from django.conf.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     
     # Portfolio App (Root URL)
-    path('', include(('portfolio_app.urls', 'portfolio_app'), namespace='portfolio_app')),
+    path('', include('portfolio_app.urls', namespace='portfolio_app')),
     
     # Accounts App: Includes Signup, Login, Logout, and all Password Reset views.
     # This inclusion defines the URL names that LOGIN_URL and other redirects use.

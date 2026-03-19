@@ -1,4 +1,10 @@
 # portfolio_app/urls.py
+"""
+URL configuration for portfolio_app.
+
+Defines URL patterns for all portfolio pages including home, about, projects,
+hobbies, anime, games, and contact functionality.
+"""
 # ----------------------------------------------------------------------------------------------------
 
 from django.urls import path
@@ -24,15 +30,15 @@ urlpatterns = [
          views.AboutmeView.as_view(), 
          name='aboutme'),
     
-    path('anime/', 
+    path('hobbies/anime/', 
          views.AnimeView.as_view(), 
          name='anime'),
     
-    path('games/', 
+    path('hobbies/games/', 
          views.GamesView.as_view(), 
          name='games'),
     
-    path('projects/', 
+    path('portfolio/projects/', 
          views.ProjectsView.as_view(), 
          name='projects'),
 ]

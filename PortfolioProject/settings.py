@@ -1,6 +1,4 @@
 # PortfolioProject/settings.py
-# ----------------------------------------------------------------------------------------------------
-
 """
 Django settings for PortfolioProject project.
 
@@ -12,6 +10,7 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
+# ----------------------------------------------------------------------------------------------------
 
 from pathlib import Path
 import os # -----
@@ -42,8 +41,6 @@ if not DEBUG:
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
     
-    # 3. Static Files (Standard for PA)
-    STATIC_ROOT = BASE_DIR / 'staticfiles'
 else:
     # During local development, we allow everything and disable SSL redirect
     ALLOWED_HOSTS = ['*'] 
@@ -61,7 +58,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'portfolio_app',  # portfolio pages -----
-    'accounts.apps.AccountsConfig',  # user accounts (login/signup) - Removed .apps.AccountsConfig for simplicity -----
+    'accounts.apps.AccountsConfig',  # user accounts (login/signup)
     'axes'  # stop brute force -----
 ]
 
@@ -89,6 +86,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'accounts.context_processors.social_links',
             ],
         },
     },
@@ -108,22 +106,31 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 AUTH_PASSWORD_VALIDATORS = [
-    {        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',},
-    {        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',},
-    {        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',},
-    {        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',},
+    {
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    },
 ]
 
 AUTHENTICATION_BACKENDS = [
-    # AxesMust be first
+    # Axes must be first
     'axes.backends.AxesBackend',
+    'accounts.backends.CustomModelBackend',  # Custom backend for future extensibility
     'django.contrib.auth.backends.ModelBackend',
 ]
 
 # --- AXES CONFIGURATION ---
 AXES_FAILURE_LIMIT = 7               # Number of attempts before lockout
 AXES_COOLOFF_TIME = 1                # Hours until the user can try again
-AXES_LOCKOUT_TEMPLATE = 'accounts/lockout.html'  # Custom "Hacker" lockout page
+AXES_LOCKOUT_TEMPLATE = 'accounts/pages/lockout.html'  # Custom "Hacker" lockout page
 AXES_RESET_ON_SUCCESS = True         # Reset failures after a valid login
 AXES_IP_WHITELIST_PROXY_COUNT = 1
 
@@ -133,7 +140,6 @@ LANGUAGE_CODE = 'en'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
-USE_L10N = True # -----
 
 LANGUAGES = [
     ('en', 'English'),
@@ -146,7 +152,7 @@ LOCALE_PATHS = [
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 # Tell Django where to look for top-level static files (like your root /static/ folder)
 STATICFILES_DIRS = [
@@ -157,8 +163,6 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# NEW: This is where Django will put everything for production
-# When you run collectstatic, it will create a folder named 'staticfiles' in your project root
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Custom User Model
@@ -166,11 +170,9 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 
 # --- Authentication Redirect URLs ---
 # Directs to the URL pattern named 'login'
-LOGIN_URL = 'accounts:login' 
+LOGIN_URL = 'accounts:login'
 # After successful login, redirects user to the URL pattern named 'dashboard'
-LOGIN_REDIRECT_URL = 'accounts:mypage' 
-# After successful logout, redirects user to the URL pattern named 'home'
-# LOGOUT_REDIRECT_URL = 'portfolio_app:home'
+LOGIN_REDIRECT_URL = 'accounts:mypage'
 
 # Email Backend (Console for testing)
 # Temporarily set to console to see emails in the terminal
@@ -188,5 +190,5 @@ EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASS')
 DEFAULT_FROM_EMAIL = f'CORE_SYSTEM <{EMAIL_HOST_USER}>'
 
 # Set password reset/activation link timeout (in seconds)
-# 259200 seconds = 3 days
-PASSWORD_RESET_TIMEOUT = 259200
+# 600 seconds = 10 minutes
+PASSWORD_RESET_TIMEOUT = 600

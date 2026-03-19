@@ -1,13 +1,16 @@
-# Portfolio Project Translation File.
-# Mohan Khatri <tky2502014@stu.o-hara.ac.jp>, 2026.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PortfolioProject 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-06 01:22+0900\n"
-"PO-Revision-Date: 2026-02-05 15:00+0900\n"
-"Last-Translator: Mohan Khatri\n"
+"POT-Creation-Date: 2026-03-19 15:24+0900\n"
+"PO-Revision-Date: 2026-03-19 15:30+0900\n"
+"Last-Translator: Mohan Khatri <tky2502014@stu.o-hara.ac.jp>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -82,10 +85,10 @@ msgstr "失敗した"
 #: .\templates\500.html:90
 msgid ""
 "The server encountered an internal breach or logic paradox. Our engineers "
-"(me) have been notified of the disturbance in the Force."
+"have been notified of the disturbance in the Force."
 msgstr ""
-"サーバー内で内部侵害またはロジックパラドックスが発生しました。エンジニア"
-"にフォースの乱れが通知されました。"
+"サーバー内で内部侵害またはロジックパラドックスが発生しました。エンジニアに"
+"フォースの乱れが通知されました。"
 
 #: .\templates\500.html:97
 msgid "_ ATTEMPTING_RECOVERY..."
@@ -95,82 +98,176 @@ msgstr "_ リカバリを試行中..."
 msgid "FORCE_REBOOT_TO_MAIN"
 msgstr "メインへ強制再起動"
 
-#: .\templates\accounts\activation_email.html:3
-msgid "INCOMING_SIGNAL: ACCOUNT_VERIFICATION"
+#: .\templates\accounts\emails\activation_email.html:3
+msgid "ACCOUNT_VERIFICATION"
 msgstr "受信信号：アカウント認証"
 
-#: .\templates\accounts\activation_email.html:5
+#: .\templates\accounts\emails\activation_email.html:5
 msgid "USERNAME"
 msgstr "ユーザー名"
 
-#: .\templates\accounts\activation_email.html:6
+#: .\templates\accounts\emails\activation_email.html:6
 msgid "SECURITY_LEVEL : 3 (DOUBLE_OPT_IN)"
 msgstr "セキュリティレベル : 3 (DOUBLE_OPT_IN)"
 
-#: .\templates\accounts\activation_email.html:7
-#: .\templates\accounts\activation_invalid.html:18
-#: .\templates\accounts\signup_success.html:18
+#: .\templates\accounts\emails\activation_email.html:7
+#: .\templates\accounts\pages\signup_success.html:17
 msgid "STATUS"
 msgstr "ステータス"
 
-#: .\templates\accounts\activation_email.html:7
+#: .\templates\accounts\emails\activation_email.html:7
 msgid "PENDING_ACTIVATION"
 msgstr "アクティベーション待機中"
 
-#: .\templates\accounts\activation_email.html:9
+#: .\templates\accounts\emails\activation_email.html:9
 msgid ""
-"To complete the initialization of your node, execute the following uplink URL"
+"To complete the initialization of your node, execute the following uplink "
+"URL:"
 msgstr "ノードの初期化を完了するには、以下のアップリンクURLを実行してください"
 
-#: .\templates\accounts\activation_email.html:13
+#: .\templates\accounts\emails\activation_email.html:13
 msgid ""
-"If you did not initiate this request, the link will expire and data will be "
-"purged."
+"If you did not initiate this request, please disregard this transmission. "
+"The link will expire shortly."
 msgstr ""
 "要求に心当たりがない場合は無視してください。リンクは失効しデータは破棄されま"
 "す。"
 
-#: .\templates\accounts\activation_email.html:15
+#: .\templates\accounts\emails\activation_email.html:15
+#: .\templates\accounts\emails\password_reset_email.html:13
 msgid "CORE_SYSTEM_ADMIN // EOF"
 msgstr "コアシステム管理者 // EOF"
 
-#: .\templates\accounts\activation_invalid.html:5
-msgid "ERROR: LINK_EXPIRED"
-msgstr "エラー：リンク期限切れ"
+#: .\templates\accounts\emails\password_reset_email.html:3
+msgid "RECOVERY_PACKET_DISPATCHED"
+msgstr "リカバリパケットが発送されました"
 
-#: .\templates\accounts\activation_invalid.html:14
-msgid "CRITICAL_FAILURE"
-msgstr "致命的障害"
+#: .\templates\accounts\emails\password_reset_email.html:5
+msgid "Incoming request detected for CREDENTIAL_OVERRIDE on your node."
+msgstr "あなたのノードで認証情報のオーバーライド要求が検出されました。"
 
-#: .\templates\accounts\activation_invalid.html:19
-msgid "TOKEN_INVALID"
-msgstr "トークン無効"
+#: .\templates\accounts\emails\password_reset_email.html:7
+msgid "Please navigate to the following secure link to verify your identity:"
+msgstr "身元を確認するために、以下の安全なリンクへ移動してください:"
 
-#: .\templates\accounts\activation_invalid.html:24
+#: .\templates\accounts\emails\password_reset_email.html:11
 msgid ""
-"The activation link is no longer valid. This occurs if the link was already "
-"used or the TTL has expired."
+"If you did not authorize this request, please disregard this transmission. "
+"The link will expire shortly."
 msgstr ""
-"アクティベーションリンクは無効です。既に使用されているか、有効期限(TTL)が切れ"
-"ています。"
+"要求に心当たりがない場合は無視してください。リンクは失効しデータは破棄されま"
+"す。"
 
-#: .\templates\accounts\activation_invalid.html:29
-msgid "RE-INITIALIZE_SIGNUP"
-msgstr "サインアップを再初期化"
+#: .\templates\accounts\forms\password_change.html:5
+msgid "Security Update"
+msgstr "セキュリティ更新"
 
-#: .\templates\accounts\activation_invalid.html:33
+#: .\templates\accounts\forms\password_change.html:13
+msgid "SECURITY_OVERRIDE"
+msgstr "セキュリティ・オーバーライド"
+
+#: .\templates\accounts\forms\password_change.html:14
+#: .\templates\accounts\pages\password_reset_confirm.html:17
+msgid "RE-CONFIGURING_SEC_KEY"
+msgstr "秘密鍵を再構成中"
+
+#: .\templates\accounts\forms\password_change.html:28
+msgid "Your password can’t be too similar to your other personal information."
+msgstr "あなたの他の個人情報と似ているパスワードにはできません。"
+
+#: .\templates\accounts\forms\password_change.html:29
+msgid "Your password must contain at least 8 characters."
+msgstr "パスワードは8文字以上である必要があります。"
+
+#: .\templates\accounts\forms\password_change.html:30
+msgid "Your password can’t be a commonly used password."
+msgstr "よく使われるパスワードにはできません。"
+
+#: .\templates\accounts\forms\password_change.html:31
+msgid "Your password can’t be entirely numeric."
+msgstr "数字だけのパスワードにはできません。"
+
+#: .\templates\accounts\forms\password_change.html:37
+#: .\templates\accounts\pages\signup.html:69
+msgid "Enter the same password as before, for verification."
+msgstr "確認のため、もう一度同じパスワードを入力してください。"
+
+#: .\templates\accounts\forms\password_change.html:50
+msgid "COMMIT_PATCH"
+msgstr "パッチをコミット"
+
+#: .\templates\accounts\forms\password_change.html:56
+#: .\templates\accounts\pages\activation_success.html:48
+#: .\templates\accounts\pages\login.html:43
+#: .\templates\accounts\pages\logout.html:28
+#: .\templates\accounts\pages\password_reset_confirm.html:41
+#: .\templates\accounts\pages\password_reset_confirm.html:59
+#: .\templates\accounts\pages\password_reset_request.html:34
+#: .\templates\accounts\pages\resend_activation.html:28
+#: .\templates\accounts\pages\signup.html:77
+#: .\templates\portfolio_app\hobbies\anime.html:27
+#: .\templates\portfolio_app\hobbies\games.html:27
+#: .\templates\portfolio_app\portfolio\projects.html:27
+msgid "RETURN_TO_ROOT"
+msgstr "ルートに戻る"
+
+#: .\templates\accounts\forms\password_change.html:59
+#: .\templates\accounts\pages\activation_success.html:20
+#: .\templates\accounts\pages\activation_success.html:30
+#: .\templates\accounts\pages\login.html:50
+#: .\templates\accounts\pages\password_reset_confirm.html:44
+#: .\templates\accounts\pages\password_reset_request.html:37
+#: .\templates\accounts\pages\resend_activation.html:29
+msgid "ACCESS_CORE"
+msgstr "コアへアクセス"
+
+#: .\templates\accounts\pages\activation_success.html:4
+msgid "ACCOUNT_ACTIVATION_STATUS"
+msgstr "アカウント有効化ステータス"
+
+#: .\templates\accounts\pages\activation_success.html:14
+msgid "UPLINK_ESTABLISHED"
+msgstr "アップリンク確立"
+
+#: .\templates\accounts\pages\activation_success.html:17
+msgid "SIGNAL_CONFIRMED: Your account is now active."
+msgstr "シグナル確認済み：あなたのアカウントは現在アクティブです。"
+
+#: .\templates\accounts\pages\activation_success.html:24
+msgid "NODE_ALREADY_ACTIVE"
+msgstr "ノードは既にアクティブです"
+
+#: .\templates\accounts\pages\activation_success.html:27
+msgid "STATUS_OK: This account was already activated."
+msgstr "ステータスOK：このアカウントは既に有効化されています。"
+
+#: .\templates\accounts\pages\activation_success.html:34
+#: .\templates\accounts\pages\password_reset_confirm.html:51
+msgid "LINK_INTEGRITY_COMPROMISED"
+msgstr "リンク整合性エラー"
+
+#: .\templates\accounts\pages\activation_success.html:36
+#: .\templates\accounts\pages\password_reset_confirm.html:52
+msgid "CRITICAL: Link signature is invalid or TTL has reached 0."
+msgstr "致命的：署名が無効、または有効期限(TTL)が終了しました。"
+
+#: .\templates\accounts\pages\activation_success.html:40
 msgid "RE-GENERATE_ACTIVATION_LINK"
 msgstr "アクティベーションリンクを再生成"
 
-#: .\templates\accounts\delete_confirm.html:5
+#: .\templates\accounts\pages\activation_success.html:43
+msgid "RE-INITIALIZE_SIGNUP"
+msgstr "サインアップを再初期化"
+
+#: .\templates\accounts\pages\delete_confirm.html:5
 msgid "Accound Deletion"
 msgstr "アカウント削除プロトコル"
 
-#: .\templates\accounts\delete_confirm.html:17
+#: .\templates\accounts\pages\delete_confirm.html:16
 msgid "EXECUTE_SYSTEM_WIPE"
 msgstr "システムワイプ実行"
 
-#: .\templates\accounts\delete_confirm.html:21
+#: .\templates\accounts\pages\delete_confirm.html:20
 msgid ""
 "CRITICAL: Operation is destructive. Data packets cannot be recovered post-"
 "execution."
@@ -178,609 +275,439 @@ msgstr ""
 "警告：この操作は破壊的です。実行後、データパケットを復元することは不可能で"
 "す。"
 
-#: .\templates\accounts\delete_confirm.html:29
+#: .\templates\accounts\pages\delete_confirm.html:28
 msgid "SUDO_PURGE_NODE"
 msgstr "SUDO_ノード完全消去"
 
-#: .\templates\accounts\delete_confirm.html:33
+#: .\templates\accounts\pages\delete_confirm.html:32
 msgid "ABORT_COMMAND // ESCAPE"
 msgstr "コマンド中断 // エスケープ"
 
-#: .\templates\accounts\lockout.html:5
+#: .\templates\accounts\pages\lockout.html:5
 msgid "System Locked"
 msgstr "システムロック"
 
-#: .\templates\accounts\lockout.html:21
+#: .\templates\accounts\pages\lockout.html:20
 msgid ""
 "CRITICAL_ERROR: Multiple unauthorized access attempts detected from this IP."
 msgstr "致命的エラー：このIPから複数の不正アクセス試行が検出されました。"
 
-#: .\templates\accounts\lockout.html:22
+#: .\templates\accounts\pages\lockout.html:21
 msgid "SECURITY_PROTOCOL_ALPHA: This node has been temporarily blacklisted."
 msgstr ""
 "セキュリティプロトコル・アルファ：このノードは一時的にブラックリストに登録さ"
 "れました。"
 
-#: .\templates\accounts\lockout.html:27
+#: .\templates\accounts\pages\lockout.html:26
 msgid "Try again in hours or contact the system administrator."
 msgstr "数時間後に再試行するか、システム管理者に連絡してください。"
 
-#: .\templates\accounts\lockout.html:32
+#: .\templates\accounts\pages\lockout.html:31
 msgid "RETURN TO ROOT"
 msgstr "ルートに戻る"
 
-#: .\templates\accounts\login.html:17
+#: .\templates\accounts\pages\login.html:13
 msgid "AUTH_GATE"
 msgstr "認証ゲート"
 
-#: .\templates\accounts\login.html:38 .\templates\accounts\signup.html:75
-#: .\templates\portfolio_app\anime.html:27
-#: .\templates\portfolio_app\games.html:27
-#: .\templates\portfolio_app\projects.html:27
-msgid "RETURN_TO_ROOT"
-msgstr "ルートに戻る"
+#: .\templates\accounts\pages\login.html:32
+#: .\templates\accounts\pages\password_reset_request.html:23
+#: .\templates\accounts\pages\profile.html:23
+#: .\templates\accounts\pages\resend_activation.html:19
+#: .\templates\accounts\pages\signup.html:44 .\templates\base.html:192
+msgid "Email Address"
+msgstr "メールアドレス"
 
-#: .\templates\accounts\login.html:41
+#: .\templates\accounts\pages\login.html:37
+#: .\templates\accounts\pages\signup.html:55
+msgid "Password"
+msgstr "パスワード"
+
+#: .\templates\accounts\pages\login.html:46
+#: .\templates\accounts\pages\signup.html:80
 msgid "BYPASS_PROTOCOL"
 msgstr "バイパス・プロトコル"
 
-#: .\templates\accounts\login.html:45
-msgid "ACCESS_CORE"
-msgstr "コアへアクセス"
-
-#: .\templates\accounts\login.html:49 .\templates\accounts\signup.html:81
+#: .\templates\accounts\pages\login.html:54
+#: .\templates\accounts\pages\signup.html:86
 msgid "Activation link expired?"
 msgstr "アクティベーションリンクが切れましたか？"
 
-#: .\templates\accounts\login.html:51 .\templates\accounts\signup.html:83
+#: .\templates\accounts\pages\login.html:56
+#: .\templates\accounts\pages\signup.html:88
 msgid "REQUEST_NEW_SIGNAL"
 msgstr "新規シグナルをリクエスト"
 
-#: .\templates\accounts\login.html:54
+#: .\templates\accounts\pages\login.html:59
 msgid "Don't have an account? "
 msgstr "アカウント未登録ですか？ "
 
-#: .\templates\accounts\login.html:54
+#: .\templates\accounts\pages\login.html:59
 msgid "Create one"
 msgstr "新規生成"
 
-#: .\templates\accounts\logout.html:5
+#: .\templates\accounts\pages\logout.html:5
 msgid "Logged Out"
 msgstr "ログアウト完了"
 
-#: .\templates\accounts\logout.html:16
+#: .\templates\accounts\pages\logout.html:15
 msgid "Session_Terminated"
 msgstr "セッション終了"
 
-#: .\templates\accounts\logout.html:21
+#: .\templates\accounts\pages\logout.html:20
 msgid ""
 "Connection closed. Your session has been securely purged from the system "
 "terminal."
 msgstr "接続切断。セッションはシステム端末から安全に破棄されました。"
 
-#: .\templates\accounts\logout.html:26
+#: .\templates\accounts\pages\logout.html:25
 msgid "Re-Initialize Login"
 msgstr "ログインを再初期化"
 
-#: .\templates\accounts\logout.html:29
-msgid "Return to Public Home"
-msgstr "パブリック・ホームに戻る"
-
-#: .\templates\accounts\mypage.html:5
-msgid "My Profile"
-msgstr "ユーザープロファイル"
-
-#: .\templates\accounts\mypage.html:16
-msgid "USER_STATION_01"
-msgstr "ユーザーステーション_01"
-
-#: .\templates\accounts\mypage.html:17
-msgid "UPLINK_STATUS: ACTIVE"
-msgstr "アップリンク状態：アクティブ"
-
-#: .\templates\accounts\mypage.html:22 .\templates\accounts\signup.html:35
-msgid "Username"
-msgstr "ユーザー名"
-
-#: .\templates\accounts\mypage.html:26
-#: .\templates\accounts\password_reset_request.html:24
-#: .\templates\accounts\signup.html:46
-msgid "Email Address"
-msgstr "メールアドレス"
-
-#: .\templates\accounts\mypage.html:32
-msgid "Date Joined"
-msgstr "登録日時"
-
-#: .\templates\accounts\mypage.html:39
-msgid "Change Password"
-msgstr "パスワード変更"
-
-#: .\templates\accounts\mypage.html:45
-msgid "System Logout"
-msgstr "システム・ログアウト"
-
-#: .\templates\accounts\mypage.html:51
-msgid "Request Account Deletion"
-msgstr "アカウント削除リクエスト"
-
-#: .\templates\accounts\mypage.html:60
-#: .\templates\accounts\password_change_done.html:29
-msgid "EXIT_TO_ROOT"
-msgstr "ルートへ脱出"
-
-#: .\templates\accounts\password_change_done.html:5
+#: .\templates\accounts\pages\password_change_done.html:5
 msgid "Update Successful"
 msgstr "更新成功"
 
-#: .\templates\accounts\password_change_done.html:16
+#: .\templates\accounts\pages\password_change_done.html:15
 msgid "PATCH_SUCCESSFUL"
 msgstr "パッチ適用成功"
 
-#: .\templates\accounts\password_change_done.html:21
+#: .\templates\accounts\pages\password_change_done.html:20
 msgid "New credentials have been hashed and deployed to the vault."
 msgstr "新しい認証情報がハッシュ化され、保管庫に展開されました。"
 
-#: .\templates\accounts\password_change_done.html:26
+#: .\templates\accounts\pages\password_change_done.html:25
 msgid "BACK_TO_USER_STATION"
 msgstr "ステーションに戻る"
 
-#: .\templates\accounts\password_change_form.html:5
-msgid "Security Update"
-msgstr "セキュリティ更新"
+#: .\templates\accounts\pages\password_change_done.html:28
+#: .\templates\accounts\pages\profile.html:57
+msgid "EXIT_TO_ROOT"
+msgstr "ルートへ脱出"
 
-#: .\templates\accounts\password_change_form.html:16
-msgid "SECURITY_OVERRIDE"
-msgstr "セキュリティ・オーバーライド"
+#: .\templates\accounts\pages\password_reset_complete.html:5
+msgid "Password Reset Complete"
+msgstr "パスワードリセット完了"
 
-#: .\templates\accounts\password_change_form.html:17
-msgid "RE-CONFIGURING_SEC_KEY"
-msgstr "秘密鍵を再構成中"
-
-#: .\templates\accounts\password_change_form.html:41
-msgid "COMMIT_PATCH"
-msgstr "パッチをコミット"
-
-#: .\templates\accounts\password_change_form.html:44
-msgid "ABORT_OPERATION"
-msgstr "操作を中止"
-
-#: .\templates\accounts\password_reset_complete.html:13
+#: .\templates\accounts\pages\password_reset_complete.html:14
 msgid "DECRYPTION_COMPLETE"
 msgstr "復号完了"
 
-#: .\templates\accounts\password_reset_complete.html:21
+#: .\templates\accounts\pages\password_reset_complete.html:22
 msgid "Credentials updated. User-node decrypted and ready for uplink."
 msgstr ""
 "認証情報が更新されました。ユーザーノードが復号され、アップリンク可能です。"
 
-#: .\templates\accounts\password_reset_complete.html:26
+#: .\templates\accounts\pages\password_reset_complete.html:27
 msgid "UPLINK_IMMEDIATELY"
 msgstr "直ちにアップリンク"
 
-#: .\templates\accounts\password_reset_confirm.html:5
+#: .\templates\accounts\pages\password_reset_confirm.html:5
 msgid "Set New Password"
 msgstr "新パスワード設定"
 
-#: .\templates\accounts\password_reset_confirm.html:16
+#: .\templates\accounts\pages\password_reset_confirm.html:15
 msgid "OVERRIDE_SEC_KEY"
 msgstr "秘密鍵のオーバーライド"
 
-#: .\templates\accounts\password_reset_confirm.html:38
+#: .\templates\accounts\pages\password_reset_confirm.html:36
 msgid "RE-ENCRYPT_NODE"
 msgstr "ノードを再暗号化"
 
-#: .\templates\accounts\password_reset_confirm.html:44
-msgid "LINK_INTEGRITY_COMPROMISED"
-msgstr "リンク整合性エラー"
-
-#: .\templates\accounts\password_reset_confirm.html:45
-msgid "CRITICAL: Link signature is invalid or TTL has reached 0."
-msgstr "致命的：署名が無効、または有効期限(TTL)が終了しました。"
-
-#: .\templates\accounts\password_reset_confirm.html:48
+#: .\templates\accounts\pages\password_reset_confirm.html:55
 msgid "RE-INITIALIZE_RECOVERY"
 msgstr "リカバリ再初期化"
 
-#: .\templates\accounts\password_reset_email.html:13
-msgid "SIGNAL_OFFLINE // EOF"
-msgstr "シグナルオフライン // EOF"
-
-#: .\templates\accounts\password_reset_request.html:5
+#: .\templates\accounts\pages\password_reset_request.html:5
 msgid "Request Password Reset"
 msgstr "パスワードリセット要求"
 
-#: .\templates\accounts\password_reset_request.html:15
+#: .\templates\accounts\pages\password_reset_request.html:14
 msgid "RECOVERY_DATABASE_SEARCH"
 msgstr "リカバリDB検索"
 
-#: .\templates\accounts\password_reset_request.html:18
+#: .\templates\accounts\pages\password_reset_request.html:17
 msgid "Enter your email to search the database."
 msgstr "DB検索のためメールアドレスを入力してください。"
 
-#: .\templates\accounts\password_reset_request.html:24
-msgid "Email"
-msgstr "メールアドレス"
-
-#: .\templates\accounts\password_reset_request.html:29
+#: .\templates\accounts\pages\password_reset_request.html:28
 msgid "DISPATCH_BYPASS_KEY"
 msgstr "バイパスキーを送信"
 
-#: .\templates\accounts\password_reset_request.html:35
-msgid "RETURN_TO_AUTH_GATE"
-msgstr "認証ゲートに戻る"
-
-#: .\templates\accounts\password_reset_sent.html:5
+#: .\templates\accounts\pages\password_reset_sent.html:5
 msgid "Password Reset Mail Sent"
 msgstr "リセットメール送信済"
 
-#: .\templates\accounts\password_reset_sent.html:15
+#: .\templates\accounts\pages\password_reset_sent.html:14
 msgid "SIGNAL_TRANSMITTED"
 msgstr "シグナル送信完了"
 
-#: .\templates\accounts\password_reset_sent.html:23
+#: .\templates\accounts\pages\password_reset_sent.html:22
 msgid "If node exists, a recovery packet has been sent to your uplink.."
 msgstr "ノードが存在する場合、アップリンクへリカバリパケットが送信されました。"
 
-#: .\templates\accounts\password_reset_sent.html:28
+#: .\templates\accounts\pages\password_reset_sent.html:27
 msgid "RETURN_TO_GATE"
 msgstr "ゲートに戻る"
 
-#: .\templates\accounts\password_reset_sent.html:33
+#: .\templates\accounts\pages\password_reset_sent.html:32
 msgid "Scan junk-sector if signal is not detected within 300ms."
 msgstr "信号が未検出の場合は、迷惑メールセクターを確認してください。"
 
-#: .\templates\accounts\resend_activation.html:5
+#: .\templates\accounts\pages\profile.html:5
+msgid "My Profile"
+msgstr "ユーザープロファイル"
+
+#: .\templates\accounts\pages\profile.html:13
+msgid "USER_STATION_01"
+msgstr "ユーザーステーション_01"
+
+#: .\templates\accounts\pages\profile.html:14
+msgid "UPLINK_STATUS: ACTIVE"
+msgstr "アップリンク状態：アクティブ"
+
+#: .\templates\accounts\pages\profile.html:19
+#: .\templates\accounts\pages\signup.html:33
+msgid "Username"
+msgstr "ユーザー名"
+
+#: .\templates\accounts\pages\profile.html:29
+msgid "Date Joined"
+msgstr "登録日時"
+
+#: .\templates\accounts\pages\profile.html:36
+msgid "Change Password"
+msgstr "パスワード変更"
+
+#: .\templates\accounts\pages\profile.html:42
+msgid "System Logout"
+msgstr "システム・ログアウト"
+
+#: .\templates\accounts\pages\profile.html:48
+msgid "Request Account Deletion"
+msgstr "アカウント削除リクエスト"
+
+#: .\templates\accounts\pages\resend_activation.html:5
 msgid "Resent Account Activation Mail"
 msgstr "アクティベーションメール再送"
 
-#: .\templates\accounts\resend_activation.html:15
+#: .\templates\accounts\pages\resend_activation.html:13
 msgid "REQUEST_NEW_UPLINK"
 msgstr "新規アップリンクを要求"
 
-#: .\templates\accounts\resend_activation.html:16
+#: .\templates\accounts\pages\resend_activation.html:14
 msgid "Enter your email to re-generate an activation token."
 msgstr "メールアドレスを入力して認証トークンを再生成してください。"
 
-#: .\templates\accounts\resend_activation.html:25
+#: .\templates\accounts\pages\resend_activation.html:24
 msgid "EXECUTE_RESEND"
 msgstr "再送実行"
 
-#: .\templates\accounts\signup.html:15
+#: .\templates\accounts\pages\signup.html:13
 msgid "INITIALIZE_NEW_NODE"
 msgstr "新規ノード初期化"
 
-#: .\templates\accounts\signup.html:38
+#: .\templates\accounts\pages\signup.html:36
 msgid "Letters, digits and @/./+/-/_ only."
 msgstr "使用可能：英数字および記号 (@/./+/-/_)"
 
-#: .\templates\accounts\signup.html:38
+#: .\templates\accounts\pages\signup.html:36
 msgid "Should be unique."
 msgstr "ユニークである必要があります。"
 
-#: .\templates\accounts\signup.html:49
+#: .\templates\accounts\pages\signup.html:47
 msgid "Cannot be reused."
 msgstr "再利用不可。"
 
-#: .\templates\accounts\signup.html:57
-msgid "Password"
-msgstr "パスワード"
-
-#: .\templates\accounts\signup.html:60
+#: .\templates\accounts\pages\signup.html:58
 msgid "Must be at least 8 characters."
 msgstr "最小8文字以上。"
 
-#: .\templates\accounts\signup.html:68
+#: .\templates\accounts\pages\signup.html:66
 msgid "Confirm Password"
 msgstr "パスワード再入力"
 
-#: .\templates\accounts\signup.html:79
+#: .\templates\accounts\pages\signup.html:84
 msgid "GENERATE_CREDENTIALS"
 msgstr "認証情報生成"
 
-#: .\templates\accounts\signup.html:87
+#: .\templates\accounts\pages\signup.html:92
 msgid "Already have an account? "
 msgstr "アカウントを所有済みですか？ "
 
-#: .\templates\accounts\signup.html:87 .\templates\base.html:59
-#: .\templates\base.html:163
+#: .\templates\accounts\pages\signup.html:92 .\templates\base.html:69
+#: .\templates\base.html:179
 msgid "Log In"
 msgstr "ログイン"
 
-#: .\templates\accounts\signup_success.html:5
+#: .\templates\accounts\pages\signup_success.html:5
 msgid "Sign Up Request Sent"
 msgstr "ユーザー登録要求を送信"
 
-#: .\templates\accounts\signup_success.html:14
+#: .\templates\accounts\pages\signup_success.html:13
 msgid "REGISTRATION_INITIALIZED"
 msgstr "登録シーケンス初期化"
 
-#: .\templates\accounts\signup_success.html:19
+#: .\templates\accounts\pages\signup_success.html:18
 msgid "AWAITING_UPLINK"
 msgstr "アップリンク待機中"
 
-#: .\templates\accounts\signup_success.html:24
+#: .\templates\accounts\pages\signup_success.html:23
 msgid ""
 "A verification sequence has been dispatched to your registered email address."
 msgstr "登録されたメールアドレスに検証シーケンスが派遣されました。"
 
-#: .\templates\accounts\signup_success.html:27
+#: .\templates\accounts\pages\signup_success.html:26
 msgid ""
 "Please execute the activation link within the signal to enable your system "
 "access."
 msgstr ""
 "システムアクセスを有効にするには、シグナル内のリンクを実行してください。"
 
-#: .\templates\accounts\signup_success.html:32
+#: .\templates\accounts\pages\signup_success.html:31
 msgid "RETURN_TO_LOGIN"
 msgstr "ログインに戻る"
 
-#: .\templates\base.html:37
+#: .\templates\base.html:46
 msgid "Hi "
 msgstr "ユーザー:"
 
-#: .\templates\base.html:37
+#: .\templates\base.html:46
 msgid "!"
 msgstr " [接続中]"
 
-#: .\templates\base.html:44
+#: .\templates\base.html:53
 msgid "Manage Account"
 msgstr "アカウント設定"
 
-#: .\templates\base.html:51
+#: .\templates\base.html:60
 msgid "Log Out"
 msgstr "ログアウト"
 
-#: .\templates\base.html:65 .\templates\base.html:164
+#: .\templates\base.html:75 .\templates\base.html:180
 msgid "Sign Up"
 msgstr "新規登録"
 
-#: .\templates\base.html:100 .\templates\base.html:155
+#: .\templates\base.html:110 .\templates\base.html:171
 msgid "Home"
 msgstr "ホーム"
 
-#: .\templates\base.html:101 .\templates\base.html:156
+#: .\templates\base.html:111 .\templates\base.html:172
 msgid "About Me"
 msgstr "自己紹介"
 
-#: .\templates\base.html:102 .\templates\base.html:157
+#: .\templates\base.html:112 .\templates\base.html:173
 msgid "Project"
 msgstr "プロジェクト"
 
-#: .\templates\base.html:103 .\templates\base.html:158
+#: .\templates\base.html:113 .\templates\base.html:174
 msgid "Hobbies"
 msgstr "趣味"
 
-#: .\templates\base.html:104 .\templates\base.html:159
+#: .\templates\base.html:114 .\templates\base.html:175
 msgid "Contact"
 msgstr "コンタクト"
 
-#: .\templates\base.html:123
+#: .\templates\base.html:137
 msgid "Projects"
 msgstr "プロジェクト"
 
-#: .\templates\base.html:126
+#: .\templates\base.html:140
 msgid "Finance Tracker"
 msgstr "口座管理システム"
 
-#: .\templates\base.html:127
+#: .\templates\base.html:141
 msgid "P2"
 msgstr "プロジェクト2"
 
-#: .\templates\base.html:128
+#: .\templates\base.html:142
 msgid "P3"
 msgstr "プロジェクト3"
 
-#: .\templates\base.html:137
+#: .\templates\base.html:143
+msgid "P4"
+msgstr "プロジェクト4"
+
+#: .\templates\base.html:144
+msgid "P5"
+msgstr "プロジェクト5"
+
+#: .\templates\base.html:145
+msgid "P6"
+msgstr "プロジェクト6"
+
+#: .\templates\base.html:146
+msgid "P7"
+msgstr "プロジェクト6"
+
+#: .\templates\base.html:152
 msgid "EXTERNAL_LINKS"
 msgstr "外部リンク"
 
-#: .\templates\base.html:152
+#: .\templates\base.html:168
 msgid "SYSTEM_MAP"
 msgstr "システム・マップ"
 
-#: .\templates\base.html:161
+#: .\templates\base.html:177
 msgid "My Account"
-msgstr "マイ・アカウント"
+msgstr "アカウント"
 
-#: .\templates\base.html:171
+#: .\templates\base.html:188
 msgid "RECEIVE_DATA_STREAMS."
 msgstr "データストリーム受信"
 
-#: .\templates\base.html:172
+#: .\templates\base.html:189
 msgid "Periodic system updates and core patches."
 msgstr "定期的なシステム更新とコアパッチ。"
 
-#: .\templates\base.html:175
-msgid "Email Address(Unavilable)"
-msgstr "メールアドレス(利用不可)"
+#: .\templates\base.html:190 .\templates\base.html:192
+msgid "UNAVAILABLE"
+msgstr "利用不可"
 
-#: .\templates\base.html:176
+#: .\templates\base.html:193
 msgid "EXECUTE"
 msgstr "実行"
 
-#: .\templates\portfolio_app\aboutme.html:11
-#: .\templates\portfolio_app\home.html:39
-msgid "IDENTITY_FILE"
-msgstr "IDファイル"
-
-#: .\templates\portfolio_app\aboutme.html:13
-msgid "DESIGNATION:"
-msgstr "名称:"
-
-#: .\templates\portfolio_app\aboutme.html:13
-#: .\templates\portfolio_app\home.html:18
-msgid "MOHAN_KHATRI"
-msgstr "カトリ_モハン"
-
-#: .\templates\portfolio_app\aboutme.html:14
-msgid "INITIALIZED"
-msgstr "初期化"
-
-#: .\templates\portfolio_app\aboutme.html:14
-msgid "2006"
-msgstr "2006"
-
-#: .\templates\portfolio_app\aboutme.html:15
-msgid "ORIGIN_LOC"
-msgstr "原産地"
-
-#: .\templates\portfolio_app\aboutme.html:15
-msgid "NEPAL"
-msgstr "ネパール"
-
-#: .\templates\portfolio_app\aboutme.html:16
-msgid "CURRENT_LOC"
-msgstr "現在地"
-
-#: .\templates\portfolio_app\aboutme.html:16
-msgid "JAPAN"
-msgstr "日本"
-
-#: .\templates\portfolio_app\aboutme.html:17
-msgid "UPLINK_PROTOCOLS:"
-msgstr "通信言語:"
-
-#: .\templates\portfolio_app\aboutme.html:17
-msgid "JAPANESE, ENGLISH, NEPALI, HINDI"
-msgstr "日本語, 英語, ネパール語, ヒンディー語"
-
-#: .\templates\portfolio_app\aboutme.html:18
-msgid "TECH_STACK:"
-msgstr "技術スタック:"
-
-#: .\templates\portfolio_app\aboutme.html:18
-msgid "PYTHON, JAVA, JAVASCRIPT, C"
-msgstr "Python, Java, JavaScript, C"
-
-#: .\templates\portfolio_app\aboutme.html:22
-msgid "EXTRACT_CV.EXE"
-msgstr "CV.EXE を抽出"
-
-#: .\templates\portfolio_app\aboutme.html:23
-msgid "CORE_VALUES // PR"
-msgstr "コアバリュー // 自己PR"
-
-#: .\templates\portfolio_app\aboutme.html:34
-msgid "BORN_IN_NEPAL"
-msgstr "ネパールにて誕生"
-
-#: .\templates\portfolio_app\aboutme.html:42
-msgid "STARTED_LIVING_IN_JAPAN"
-msgstr "日本での生活開始"
-
-#: .\templates\portfolio_app\aboutme.html:43
-msgid "(NEPALI_SCHOOL)"
-msgstr "(ネパールの学校)"
-
-#: .\templates\portfolio_app\aboutme.html:51
-msgid "JUNIOR_HIGH_SCHOOL"
-msgstr "中学校"
-
-#: .\templates\portfolio_app\aboutme.html:52
-msgid "(JAPANESE_SCHOOL)"
-msgstr "(日本の学校)"
-
-#: .\templates\portfolio_app\aboutme.html:60
-msgid "HIGH_SCHOOL"
-msgstr "高校"
-
-#: .\templates\portfolio_app\aboutme.html:61
-msgid "(ELECTRONIC)"
-msgstr "(電子科)"
-
-#: .\templates\portfolio_app\aboutme.html:69
-msgid "VOCATIONAL_SCHOOL"
-msgstr "専門学校"
-
-#: .\templates\portfolio_app\aboutme.html:70
-msgid "(SYSTEM_DEVELOPMENT)"
-msgstr "(システム開発コース)"
-
-#: .\templates\portfolio_app\aboutme.html:77
-msgid "NOW"
-msgstr "現在"
-
-#: .\templates\portfolio_app\aboutme.html:78
-msgid "STATUS:EXECUTING_PRESENT_01"
-msgstr "ステータス：満喫中！_01"
-
-#: .\templates\portfolio_app\anime.html:5
-#: .\templates\portfolio_app\games.html:5
-#: .\templates\portfolio_app\projects.html:5
+#: .\templates\portfolio_app\hobbies\anime.html:5
+#: .\templates\portfolio_app\hobbies\games.html:5
+#: .\templates\portfolio_app\portfolio\projects.html:5
 msgid "SYSTEM_EXPANSION"
 msgstr "システム拡張"
 
-#: .\templates\portfolio_app\anime.html:11
-#: .\templates\portfolio_app\games.html:11
-#: .\templates\portfolio_app\projects.html:11
+#: .\templates\portfolio_app\hobbies\anime.html:11
+#: .\templates\portfolio_app\hobbies\games.html:11
+#: .\templates\portfolio_app\portfolio\projects.html:11
 msgid "403: SECTOR_LOCKED"
 msgstr "403: セクター・ロック"
 
-#: .\templates\portfolio_app\anime.html:15
-#: .\templates\portfolio_app\games.html:15
-#: .\templates\portfolio_app\projects.html:15
+#: .\templates\portfolio_app\hobbies\anime.html:15
+#: .\templates\portfolio_app\hobbies\games.html:15
+#: .\templates\portfolio_app\portfolio\projects.html:15
 msgid "ENCRYPTED_DATA_DETECTED"
 msgstr "暗号化データを検出"
 
-#: .\templates\portfolio_app\anime.html:17
-#: .\templates\portfolio_app\games.html:17
-#: .\templates\portfolio_app\projects.html:17
+#: .\templates\portfolio_app\hobbies\anime.html:17
+#: .\templates\portfolio_app\hobbies\games.html:17
+#: .\templates\portfolio_app\portfolio\projects.html:17
 msgid "System administrators are currently populating these database tables."
 msgstr "管理者がデータベーステーブルを構築中です。"
 
-#: .\templates\portfolio_app\anime.html:18
-#: .\templates\portfolio_app\games.html:18
-#: .\templates\portfolio_app\projects.html:18
+#: .\templates\portfolio_app\hobbies\anime.html:18
+#: .\templates\portfolio_app\hobbies\games.html:18
+#: .\templates\portfolio_app\portfolio\projects.html:18
 msgid "Projected completion: Q2 2026"
 msgstr "完了予定：2026年第2四半期"
 
-#: .\templates\portfolio_app\contact.html:12
-msgid "ESTABLISH_COMM_LINK"
-msgstr "通信リンク確立"
-
-#: .\templates\portfolio_app\contact.html:13
-msgid "PRIMARY_CHANNEL: DISCORD // SECONDARY: FORM_UPLINK"
-msgstr "第1経路: Discord // 第2経路: フォーム"
-
-#: .\templates\portfolio_app\contact.html:35
-msgid "ENCRYPT_&_TRANSMIT"
-msgstr "暗号化 ＆ 送信"
-
-#: .\templates\portfolio_app\contact.html:39
-msgid "SENDER_IDENTITY_VERIFIED"
-msgstr "送信者ID検証済み"
-
-#: .\templates\portfolio_app\contact.html:67
-msgid "BROADCAST"
-msgstr "ブロードキャスト"
-
-#: .\templates\portfolio_app\contact.html:75
-msgid "ACCESS_DENIED"
-msgstr "アクセス拒否"
-
-#: .\templates\portfolio_app\contact.html:76
-msgid "Please establish a secure session to use this uplink."
-msgstr "このアップリンクを使用するにはセキュアセッションを確立してください。"
-
-#: .\templates\portfolio_app\contact.html:79
-msgid "LOGIN"
-msgstr "ログイン"
-
-#: .\templates\portfolio_app\contact.html:91
-msgid "TERMINATE_SESSION"
-msgstr "セッション終了"
-
-#: .\templates\portfolio_app\hobbies.html:140
+#: .\templates\portfolio_app\hobbies\hobbies.html:18
 msgid "DIVERSION_LOGS"
 msgstr "趣味ログ"
 
-#: .\templates\portfolio_app\hobbies.html:151
-#: .\templates\portfolio_app\home.html:59
+#: .\templates\portfolio_app\hobbies\hobbies.html:29
+#: .\templates\portfolio_app\pages\home.html:61
 msgid "ANIME"
 msgstr "アニメ"
 
-#: .\templates\portfolio_app\hobbies.html:153
+#: .\templates\portfolio_app\hobbies\hobbies.html:31
 msgid ""
 "\"Starting with classics like Pokémon and Dragon Ball, I have now completed "
 "over 100 series. Anime was a key factor in helping me learn Japanese; I "
@@ -792,33 +719,35 @@ msgid ""
 msgstr ""
 "ポケモンやドラゴンボール等の名作に触れ、現在は100以上のシリーズを視聴しまし"
 "た。アニメは日本語学習の大きな助けとなり、現在はオリジナル版で文化と言語を深"
-"く理解できるようになりました。"
+"く理解できるようになりました。ONE PIECEやHUNTER×HUNTERの大冒険から、よう実やDr. "
+"STONEのような戦略的な深みまで、アニメは私の物語と忍耐に対する見方を形作ってき"
+"ました。"
 
-#: .\templates\portfolio_app\hobbies.html:162
-#: .\templates\portfolio_app\home.html:58
+#: .\templates\portfolio_app\hobbies\hobbies.html:40
+#: .\templates\portfolio_app\pages\home.html:60
 msgid "MORE_ANIMES"
 msgstr "アニメ詳細"
 
-#: .\templates\portfolio_app\hobbies.html:168
-#: .\templates\portfolio_app\hobbies.html:215
+#: .\templates\portfolio_app\hobbies\hobbies.html:46
+#: .\templates\portfolio_app\hobbies\hobbies.html:93
 msgid "← SCROLL_LEFT"
 msgstr "← 左スクロール"
 
-#: .\templates\portfolio_app\hobbies.html:169
+#: .\templates\portfolio_app\hobbies\hobbies.html:47
 msgid "SUBROUTINE: RECREATION"
 msgstr "サブルーチン: レクリエーション"
 
-#: .\templates\portfolio_app\hobbies.html:170
-#: .\templates\portfolio_app\hobbies.html:217
+#: .\templates\portfolio_app\hobbies\hobbies.html:48
+#: .\templates\portfolio_app\hobbies\hobbies.html:95
 msgid "SCROLL_RIGHT →"
 msgstr "右スクロール →"
 
-#: .\templates\portfolio_app\hobbies.html:175
-#: .\templates\portfolio_app\home.html:65
+#: .\templates\portfolio_app\hobbies\hobbies.html:53
+#: .\templates\portfolio_app\pages\home.html:67
 msgid "GAMES"
 msgstr "ゲーム"
 
-#: .\templates\portfolio_app\hobbies.html:177
+#: .\templates\portfolio_app\hobbies\hobbies.html:55
 msgid ""
 "\"Gaming is where my interest in systems began. Currently, I’m focused on "
 "the tactical depth of Valorant and the strategy of Clash of Clans and Mobile "
@@ -826,19 +755,21 @@ msgid ""
 "Simulator, I am always looking toward the next evolution of gaming—eagerly "
 "anticipating titles like GTA VI, Ananta and Forza Horizon 6.\""
 msgstr ""
-"ゲームはシステムへの興味の原点です。VALORANTやCoC等の戦略的なタイトルを好み、"
-"GTA VI等の次世代作品を熱望しています。"
+"ゲームはシステムへの興味の原点です。現在はVALORANTの戦術的深みやClash of "
+"Clans、Mobile Legendsの戦略に集中しています。原神からEuro Truck Simulatorまで"
+"広大な世界を探索してきましたが、常にゲームの次の進化に注目しており、GTA VIや"
+"Ananta、Forza Horizon 6のようなタイトルを熱望しています。"
 
-#: .\templates\portfolio_app\hobbies.html:184
-#: .\templates\portfolio_app\home.html:64
+#: .\templates\portfolio_app\hobbies\hobbies.html:62
+#: .\templates\portfolio_app\pages\home.html:66
 msgid "MORE_GAMES"
 msgstr "ゲーム詳細"
 
-#: .\templates\portfolio_app\hobbies.html:199
+#: .\templates\portfolio_app\hobbies\hobbies.html:77
 msgid "TRAVELING_&_FILMING"
 msgstr "旅行 ＆ 撮影"
 
-#: .\templates\portfolio_app\hobbies.html:201
+#: .\templates\portfolio_app\hobbies\hobbies.html:79
 msgid ""
 "\"I love exploring new horizons and capturing the essence of the moment. Now "
 "that I’ve secured my driver’s and bike licenses, I’m excited to push my "
@@ -847,19 +778,20 @@ msgid ""
 "with family and friends and preserving those memories through a cinematic "
 "lens.\""
 msgstr ""
-"新しい地平線を探索し、瞬間の本質を捉えるのが好きです。免許を取得したので、日"
-"本中の美しい場所を訪れ、それらをシネマティックに記録することを楽しみにしてい"
-"ます。"
+"新しい地平線を探索し、瞬間の本質を捉えるのが好きです。車とバイクの免許を取得"
+"したので、日本中のさらに遠く美しい場所を訪れることを楽しみにしています。撮影"
+"は単にカメラを使うことではなく、家族や友人と経験を共有し、それらの思い出をシ"
+"ネマティックなレンズを通して保存することだと考えています。"
 
-#: .\templates\portfolio_app\hobbies.html:216
+#: .\templates\portfolio_app\hobbies\hobbies.html:94
 msgid "MISC_DATA"
 msgstr "その他"
 
-#: .\templates\portfolio_app\hobbies.html:223
+#: .\templates\portfolio_app\hobbies\hobbies.html:101
 msgid "Creative_&_Chores"
 msgstr "創作 ＆ 日用"
 
-#: .\templates\portfolio_app\hobbies.html:225
+#: .\templates\portfolio_app\hobbies\hobbies.html:103
 msgid ""
 "\"Beyond coding, I find balance in both the structured and the artistic. "
 "Whether it's the strategic depth of Chess, the mechanical logic of a Rubik’s "
@@ -867,77 +799,217 @@ msgid ""
 "find peace in the everyday—cooking, cleaning, and drawing are where I "
 "recharge my creative energy.\""
 msgstr ""
-"コーディング以外では、チェスやルービックキューブといった論理的なパズルを楽し"
-"み、料理や掃除、絵を描くことで創造的なエネルギーを充電しています。"
+"コーディング以外では、論理的かつ芸術的な両方のバランスを大切にしています。チェス"
+"の戦略的深み、ルービックキューブの機械的論理、あるいはプログラミングに必要な"
+"集中力など、パズルを解くことを楽しんでいます。また、料理や掃除、絵を描くといっ"
+"た日常の中にも平穏を見出し、そこで創造的なエネルギーを充電しています。"
 
-#: .\templates\portfolio_app\hobbies.html:242
+#: .\templates\portfolio_app\hobbies\hobbies.html:120
 msgid "LISTENING_MUSIC"
 msgstr "音楽鑑賞"
 
-#: .\templates\portfolio_app\home.html:18
-msgid "MOHAN KHATRI"
-msgstr "カトリ モハン"
+#: .\templates\portfolio_app\pages\about_me.html:12
+#: .\templates\portfolio_app\pages\home.html:41
+msgid "IDENTITY_FILE"
+msgstr "IDファイル"
 
-#: .\templates\portfolio_app\home.html:19
+#: .\templates\portfolio_app\pages\about_me.html:14
+msgid "DESIGNATION:"
+msgstr "名称:"
+
+#: .\templates\portfolio_app\pages\about_me.html:14
+#: .\templates\portfolio_app\pages\home.html:20
+msgid "MOHAN_KHATRI"
+msgstr "カトリ_モハン"
+
+#: .\templates\portfolio_app\pages\about_me.html:15
+msgid "INITIALIZED"
+msgstr "初期化"
+
+#: .\templates\portfolio_app\pages\about_me.html:15
+msgid "2006"
+msgstr "2006年"
+
+#: .\templates\portfolio_app\pages\about_me.html:16
+msgid "ORIGIN_LOC"
+msgstr "原産地"
+
+#: .\templates\portfolio_app\pages\about_me.html:16
+msgid "NEPAL"
+msgstr "ネパール"
+
+#: .\templates\portfolio_app\pages\about_me.html:17
+msgid "CURRENT_LOC"
+msgstr "現在地"
+
+#: .\templates\portfolio_app\pages\about_me.html:17
+msgid "JAPAN"
+msgstr "日本"
+
+#: .\templates\portfolio_app\pages\about_me.html:18
+msgid "UPLINK_PROTOCOLS:"
+msgstr "通信言語:"
+
+#: .\templates\portfolio_app\pages\about_me.html:18
+msgid "JAPANESE, ENGLISH, NEPALI, HINDI"
+msgstr "日本語, 英語, ネパール語, ヒンディー語"
+
+#: .\templates\portfolio_app\pages\about_me.html:19
+msgid "TECH_STACK:"
+msgstr "技術スタック:"
+
+#: .\templates\portfolio_app\pages\about_me.html:19
+msgid "PYTHON, JAVA, JAVASCRIPT, C"
+msgstr "Python, Java, JavaScript, C"
+
+#: .\templates\portfolio_app\pages\about_me.html:23
+msgid "EXTRACT_CV.EXE"
+msgstr "CV.EXE を抽出"
+
+#: .\templates\portfolio_app\pages\about_me.html:24
+msgid "CORE_VALUES // PR"
+msgstr "コアバリュー // 自己PR"
+
+#: .\templates\portfolio_app\pages\about_me.html:35
+msgid "BORN_IN_NEPAL"
+msgstr "ネパールにて誕生"
+
+#: .\templates\portfolio_app\pages\about_me.html:43
+msgid "STARTED_LIVING_IN_JAPAN"
+msgstr "日本での生活開始"
+
+#: .\templates\portfolio_app\pages\about_me.html:44
+msgid "(NEPALI_SCHOOL)"
+msgstr "(ネパールの学校)"
+
+#: .\templates\portfolio_app\pages\about_me.html:52
+msgid "JUNIOR_HIGH_SCHOOL"
+msgstr "中学校"
+
+#: .\templates\portfolio_app\pages\about_me.html:53
+msgid "(JAPANESE_SCHOOL)"
+msgstr "(日本の学校)"
+
+#: .\templates\portfolio_app\pages\about_me.html:61
+msgid "HIGH_SCHOOL"
+msgstr "高校"
+
+#: .\templates\portfolio_app\pages\about_me.html:62
+msgid "(ELECTRONIC)"
+msgstr "(電子科)"
+
+#: .\templates\portfolio_app\pages\about_me.html:70
+msgid "VOCATIONAL_SCHOOL"
+msgstr "専門学校"
+
+#: .\templates\portfolio_app\pages\about_me.html:71
+msgid "(SYSTEM_DEVELOPMENT)"
+msgstr "(システム開発コース)"
+
+#: .\templates\portfolio_app\pages\about_me.html:78
+msgid "NOW"
+msgstr "現在"
+
+#: .\templates\portfolio_app\pages\about_me.html:79
+msgid "STATUS:EXECUTING_PRESENT_01"
+msgstr "ステータス：実行中_01"
+
+#: .\templates\portfolio_app\pages\contact.html:13
+msgid "ESTABLISH_COMM_LINK"
+msgstr "通信リンク確立"
+
+#: .\templates\portfolio_app\pages\contact.html:14
+msgid "PRIMARY_CHANNEL: DISCORD // SECONDARY: FORM_UPLINK"
+msgstr "第1経路: Discord // 第2経路: フォーム"
+
+#: .\templates\portfolio_app\pages\contact.html:36
+msgid "ENCRYPT_&_TRANSMIT"
+msgstr "暗号化 ＆ 送信"
+
+#: .\templates\portfolio_app\pages\contact.html:40
+msgid "SENDER_IDENTITY_VERIFIED"
+msgstr "送信者ID検証済み"
+
+#: .\templates\portfolio_app\pages\contact.html:68
+msgid "BROADCAST"
+msgstr "ブロードキャスト"
+
+#: .\templates\portfolio_app\pages\contact.html:76
+msgid "ACCESS_DENIED"
+msgstr "アクセス拒否"
+
+#: .\templates\portfolio_app\pages\contact.html:77
+msgid "Please establish a secure session to use this uplink."
+msgstr "このアップリンクを使用するにはセキュアセッションを確立してください。"
+
+#: .\templates\portfolio_app\pages\contact.html:80
+msgid "LOGIN"
+msgstr "ログイン"
+
+#: .\templates\portfolio_app\pages\contact.html:92
+msgid "TERMINATE_SESSION"
+msgstr "セッション終了"
+
+#: .\templates\portfolio_app\pages\home.html:21
 msgid "STATUS: "
 msgstr "ステータス: "
 
-#: .\templates\portfolio_app\home.html:19
+#: .\templates\portfolio_app\pages\home.html:21
 msgid "STUDENT"
 msgstr "学生"
 
-#: .\templates\portfolio_app\home.html:20
+#: .\templates\portfolio_app\pages\home.html:22
 msgid "SCOPE: INFINITE"
 msgstr "スコープ: 無限"
 
-#: .\templates\portfolio_app\home.html:21
+#: .\templates\portfolio_app\pages\home.html:23
 msgid "CONTACT"
 msgstr "コンタクト"
 
-#: .\templates\portfolio_app\home.html:40
+#: .\templates\portfolio_app\pages\home.html:42
 msgid "Student at Vocational School in Japan."
-msgstr "日本の専門学校生"
+msgstr "日本の専門学校生。"
 
-#: .\templates\portfolio_app\home.html:41
+#: .\templates\portfolio_app\pages\home.html:43
 msgid "Studying System Development."
-msgstr "システム開発専攻中"
+msgstr "システム開発専攻中。"
 
-#: .\templates\portfolio_app\home.html:49
+#: .\templates\portfolio_app\pages\home.html:51
 msgid "DECRYPT_DETAILS"
 msgstr "詳細を復号"
 
-#: .\templates\portfolio_app\home.html:60
+#: .\templates\portfolio_app\pages\home.html:62
 msgid "FAV: ONE_PIECE"
 msgstr "推し：ONE PIECE"
 
-#: .\templates\portfolio_app\home.html:66
+#: .\templates\portfolio_app\pages\home.html:68
 msgid "FAV: VALORANT"
 msgstr "推し：VALORANT"
 
-#: .\templates\portfolio_app\home.html:71
+#: .\templates\portfolio_app\pages\home.html:73
 msgid "MORE_HOBBIES"
 msgstr "その他の趣味"
 
-#: .\templates\portfolio_app\home.html:78
+#: .\templates\portfolio_app\pages\home.html:80
 msgid "PROJECT_VAULT"
 msgstr "プロジェクト保管庫"
 
-#: .\templates\portfolio_app\home.html:79
+#: .\templates\portfolio_app\pages\home.html:81
 msgid "Scanning system nodes for history..."
 msgstr "システムノードをスキャン中..."
 
-#: .\templates\portfolio_app\home.html:87
+#: .\templates\portfolio_app\pages\home.html:89
 msgid "ABOUT_ME"
 msgstr "自己紹介"
 
-#: .\templates\portfolio_app\home.html:96
+#: .\templates\portfolio_app\pages\home.html:98
 msgid "HOBBIES"
 msgstr "趣味"
 
-#: .\templates\portfolio_app\home.html:105
+#: .\templates\portfolio_app\pages\home.html:107
 msgid "CONTACT ME"
 msgstr "お問い合わせ"
 
-#: .\templates\portfolio_app\home.html:114
+#: .\templates\portfolio_app\pages\home.html:116
 msgid "PROJECTS"
 msgstr "プロジェクト"

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Logged Out" %}{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block contents %}
+<div class="account-viewport">
+    <div class="auth-card text-center">
+        <div class="mb-4">
+            <i class="fas fa-power-off fa-4x mb-3"></i>
+            <h2 class="text-uppercase fw-bold">{% trans "Session_Terminated" %}</h2>
+            <div class="mx-auto"></div>
+        </div>
+
+        <p class="mb-4 opacity-75">
+            {% trans "Connection closed. Your session has been securely purged from the system terminal." %}
+        </p>
+
+        <div class="d-grid gap-2">
+            <a href="{% url 'accounts:login' %}" class="btn btn-solid">
+                <i class="fas fa-sign-in-alt me-2"></i>{% trans "Re-Initialize Login" %}
+            </a>
+            <a href="{% url 'portfolio_app:home' %}" class="fav-link mt-3 d-inline-block">
+                {% trans "RETURN_TO_ROOT" %}
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

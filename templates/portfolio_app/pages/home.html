@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}Portfolio | Mohan Khatri{% endblock %}
+{% block html_class %}snap-desktop{% endblock %}
+{% block body_class %}page-home{% endblock %}
+
+{% block header %}
+<section id="hero" class="full-page snap-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-5 text-center">
+                <div class="cloud-container">
+                    <img loading="lazy" src="{% static 'images/laptop.jpg' %}" class="img-fluid profile-img" alt="laptop">
+                </div>
+            </div>
+
+            <div class="col-md-7">
+                <h1 class="display-1 fw-bold">{% trans "MOHAN_KHATRI" %}</h1>
+                <p class="fs-4">{% trans "STATUS: " %}<span class="fw-bold">{% trans "STUDENT" %}</span></p>
+                <p class="fs-4 typewriter-text">{% trans "SCOPE: INFINITE" %}</p>
+                <a href="{% url 'portfolio_app:contact' %}" class="btn custom-btn mt-3 px-5 rounded-pill">{% trans "CONTACT" %}</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block contents %}
+<section id="about" class="full-page snap-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-5 text-center order-2 order-md-3">
+                <div class="cloud-container">
+                    <img loading="lazy" src="{% static 'images/wolf2.png' %}" class="img-fluid profile-img" alt="About">
+                </div>
+            </div>
+            
+            <div class="col-md-7 order-1 order-md-2">
+                <h2 class="display-3 fw-bold">{% trans "IDENTITY_FILE" %}</h2>
+                <p class="fs-4"><span class="fw-bold">{% trans "Student at Vocational School in Japan." %}</span></p>
+                <p class="fs-4"><span class="fw-bold">{% trans "Studying System Development." %}</span></p>
+                <div class="d-flex gap-4 my-4 social-icons">
+                    <a class="nav-link" href="{{ SOCIAL_LINKS.discord }}"><i class="fab fa-discord fa-3x"></i></a>
+                    <a class="nav-link" href="{{ SOCIAL_LINKS.github }}"><i class="fab fa-github fa-3x"></i></a>
+                    <a class="nav-link" href="{{ SOCIAL_LINKS.instagram }}"><i class="fab fa-instagram fa-3x"></i></a>
+                    <a class="nav-link" href="{{ SOCIAL_LINKS.linkedin }}"><i class="fab fa-linkedin fa-3x"></i></a>
+                    <a class="nav-link" href="{{ SOCIAL_LINKS.youtube }}"><i class="fab fa-youtube fa-3x"></i></a>
+                </div>
+                <a href="{% url 'portfolio_app:aboutme' %}" class="btn custom-btn px-4 rounded-pill">{% trans "DECRYPT_DETAILS" %}</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="hobbies-split" class="full-page position-relative snap-section">
+    <div class="row g-0 h-100 w-100">
+        <div class="col-6 d-flex flex-column justify-content-center align-items-center border-end border-2 position-relative hobby-side">
+            <a href="{% url 'portfolio_app:anime' %}" class="fav-link top-0 start-0 m-4">{% trans "MORE_ANIMES" %}</a>
+            <h2 class="display-2 fw-bold">{% trans "ANIME" %}</h2>
+            <p class="fs-5">{% trans "FAV: ONE_PIECE" %}</p>
+        </div>
+
+        <div class="col-6 d-flex flex-column justify-content-center align-items-center position-relative hobby-side">
+            <a href="{% url 'portfolio_app:games' %}" class="fav-link top-0 end-0 m-4">{% trans "MORE_GAMES" %}</a>
+            <h2 class="display-2 fw-bold">{% trans "GAMES" %}</h2>
+            <p class="fs-5">{% trans "FAV: VALORANT" %}</p>
+        </div>
+    </div>
+
+    <div class="position-absolute top-50 start-50 translate-middle z-index-10">
+        <a href="{% url 'portfolio_app:hobbies' %}" class="btn btn-solid rounded-pill px-5 py-3 fw-bold shadow-lg"><h3><strong>{% trans "MORE_HOBBIES" %}</strong></h3></a>
+    </div>
+</section>
+
+<section id="showcase" class="normal-scroll home-showcase">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-4 fw-bold">{% trans "PROJECT_VAULT" %}</h2>
+            <p class="fs-5">{% trans "Scanning system nodes for history..." %}</p>
+        </div>
+        
+        <div class="horizontal-scroll-wrapper">
+            <div class="showcase-card">
+                <a href="{% url 'portfolio_app:aboutme' %}">
+                <img loading="lazy" src="{% static 'images/helloworld.jpg' %}" alt="About">
+                <div class="card-overlay">
+                    {% trans "ABOUT_ME" %}
+                </div>
+                </a>
+            </div>
+
+            <div class="showcase-card">
+                <a href="{% url 'portfolio_app:hobbies' %}">
+                <img loading="lazy" src="{% static 'images/game.jpg' %}" alt="Hobbies">
+                <div class="card-overlay">
+                    {% trans "HOBBIES" %}
+                </div>
+                </a>
+            </div>
+
+            <div class="showcase-card">
+                <a href="{% url 'portfolio_app:contact' %}">
+                <img loading="lazy" src="{% static 'images/social.png' %}" alt="Contact">
+                <div class="card-overlay">
+                    {% trans "CONTACT ME" %}
+                </div>
+                </a>
+            </div>
+
+            <div class="showcase-card">
+                <a href="{% url 'portfolio_app:projects' %}">
+                <img loading="lazy" src="{% static 'images/comingsoon.png' %}" alt="Projects">
+                <div class="card-overlay">
+                    {% trans "PROJECTS" %}
+                </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

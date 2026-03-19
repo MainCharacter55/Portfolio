@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}Hobbie | Mohan Khatris{% endblock %}
+{% block html_class %}snap-desktop snap-mobile-hobbies{% endblock %}
+{% block body_class %}page-hobbies{% endblock %}
+
+{% block extra_css %}
+<link href="{% static 'css/hobbies.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block contents %}
+
+<div class="hobbies-main-wrapper">
+    <section class="full-page snap-section hobbies-snap-section d-flex flex-column">
+        <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center">
+            <h2 class="display-1 fw-bold">{% trans "DIVERSION_LOGS" %}</h2>
+        </div>
+    </section>
+
+    <section class="full-page snap-section hobbies-snap-section horizontal-snap position-relative">
+        <div class="hobby-slide">
+            <div class="hobby-content-container">
+                <div class="hobby-image-side">
+                    <img loading="lazy" src="{% static 'images/animebillboard.jpg' %}" alt="Anime">
+                </div>
+                <div class="hobby-text-side">
+                    <h2 class="display-5 fw-bold text-uppercase">{% trans "ANIME" %}</h2>
+                    <p>
+                        {% blocktrans trimmed %} "Starting with classics like Pokémon and Dragon Ball,
+                        I have now completed over 100 series.
+                        Anime was a key factor in helping me learn Japanese;
+                        I transitioned from dubs and subs to watching in original Japanese,
+                        which allowed me to truly understand the language and culture.
+                        From the grand adventure of One Piece and Hunter x Hunter
+                        to the strategic depth of Classroom of the Elite and Dr. Stone,
+                        anime has shaped my perspective on storytelling and perseverance." {% endblocktrans %}
+                    </p>
+                    <a href="{% url 'portfolio_app:anime' %}" class="btn btn-solid rounded-pill px-5 py-3 fw-bold shadow-lg"><p><strong>{% trans "MORE_ANIMES" %}</strong></p></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="hobby-slide hero-center">
+            <p class="mb-2">{% trans "← SCROLL_LEFT" %}</p>
+            <h1 class="display-2 fw-bold">{% trans "SUBROUTINE: RECREATION" %}</h1>
+            <p class="mt-2">{% trans "SCROLL_RIGHT →" %}</p>
+        </div>
+
+        <div class="hobby-slide">
+            <div class="hobby-content-container">
+                <div class="hobby-text-side"> <h2 class="display-5 fw-bold text-uppercase">{% trans "GAMES" %}</h2>
+                    <p>
+                        {% blocktrans trimmed %} "Gaming is where my interest in systems began.
+                        Currently, I’m focused on the tactical depth of Valorant and
+                        the strategy of Clash of Clans and Mobile Legends.
+                        Having explored vast worlds from Genshin Impact to Euro Truck Simulator,
+                        I am always looking toward the next evolution of gaming—eagerly
+                        anticipating titles like GTA VI, Ananta and Forza Horizon 6." {% endblocktrans %}
+                    </p>
+                    <a href="{% url 'portfolio_app:games' %}" class="btn btn-solid rounded-pill px-5 py-3 fw-bold shadow-lg"><p><strong>{% trans "MORE_GAMES" %}</strong></p></a>
+                </div>
+                <div class="hobby-image-side">
+                    <img loading="lazy" src="{% static 'images/pc.jpg' %}" alt="Gaming">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="full-page snap-section hobbies-snap-section horizontal-snap">
+        <div class="hobby-slide">
+            <div class="hobby-content-container">
+                <div class="hobby-image-side">
+                    <img loading="lazy" src="{% static 'images/car.jpg' %}" alt="Car">
+                </div>
+                <div class="hobby-text-side"> <h2 class="display-5 fw-bold text-uppercase">{% trans "TRAVELING_&_FILMING" %}</h2>
+                    <p>
+                        {% blocktrans trimmed %} "I love exploring new horizons and capturing the essence of the moment.
+                        Now that I’ve secured my driver’s and bike licenses,
+                        I’m excited to push my boundaries and 
+                        visit even more remote and beautiful locations across Japan.
+                        For me, filming isn't just about the camera;
+                        it’s about sharing experiences with family and friends
+                        and preserving those memories through a cinematic lens." {% endblocktrans %}
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hobby-slide hero-center">
+            <div class="text-center">
+                <p class="mb-2">{% trans "← SCROLL_LEFT" %}</p>
+                <h1 class="display-1 fw-bold">{% trans "MISC_DATA" %}</h1>
+                <p class="mt-2">{% trans "SCROLL_RIGHT →" %}</p>
+            </div>
+        </div>
+
+        <div class="hobby-slide">
+            <div class="hobby-content-container">
+                <div class="hobby-text-side"> <h2 class="display-5 fw-bold text-uppercase">{% trans "Creative_&_Chores" %}</h2>
+                    <p>
+                        {% blocktrans trimmed %} "Beyond coding, I find balance in both the structured and the artistic.
+                        Whether it's the strategic depth of Chess, the mechanical logic of a Rubik’s Cube,
+                        or the focus required for Programming, I enjoy solving puzzles.
+                        I also find peace in the everyday—cooking, cleaning, and
+                        drawing are where I recharge my creative energy." {% endblocktrans %}
+                    </p>
+                </div>
+                <div class="hobby-image-side">
+                    <img loading="lazy" src="{% static 'images/rubiccube.jpg' %}" alt="Rubic Cube">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="full-page hobbies-footer-sync d-flex flex-column align-items-center justify-content-center">
+        <div class="row w-75 align-items-center g-3">
+            <div class="col-12 d-flex flex-column justify-content-center align-items-center mb-1">
+                <h2 class="display-1 fw-bold">{% trans "LISTENING_MUSIC" %}</h2>
+            </div>
+            <div class="col-lg-6 d-flex justify-content-center">
+                <div class="spotify-wrapper">
+                    <iframe style="border-radius:12px" 
+                        src="https://open.spotify.com/embed/playlist/6DLf9YPj35HXjFsFQu5z2e?utm_source=generator&theme=0"
+                        width="100%" height="352" 
+                        frameborder="0" 
+                        allowfullscreen="" 
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+            <div class="col-lg-6 d-flex justify-content-center">
+                <div class="spotify-wrapper">
+                    <iframe style="border-radius:12px" 
+                        src="https://open.spotify.com/embed/playlist/3r4adjvUDrsEBIe23UZ2Rs?utm_source=generator&theme=0"
+                        width="100%" height="352" 
+                        frameborder="0" 
+                        allowfullscreen="" 
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/hobbies.js' %}"></script>
+{% endblock %}

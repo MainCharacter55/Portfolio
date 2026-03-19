@@ -1,0 +1,16 @@
+{% load i18n %}
+{% autoescape off %}
+--- {% trans "ACCOUNT_VERIFICATION" %} ---
+--------------------------------------------------
+{% trans "USERNAME" %}: {{ user.username }}
+{% trans "SECURITY_LEVEL : 3 (DOUBLE_OPT_IN)" %}
+{% trans "STATUS" %}: {% trans "PENDING_ACTIVATION" %}
+
+{% trans "To complete the initialization of your node, execute the following uplink URL:" %}
+
+{{ protocol }}://{{ domain }}{% url 'accounts:activate' uidb64=uid token=token %}
+
+{% trans "If you did not initiate this request, please disregard this transmission. The link will expire shortly." %}
+--------------------------------------------------
+--- {% trans "CORE_SYSTEM_ADMIN // EOF" %} ---
+{% endautoescape %}
