@@ -143,4 +143,3 @@ class ContactMessage(models.Model):
     def __str__(self) -> str:
         """Return a readable string representation of the contact message."""
         return f"Message from {self.user.email} — {self.subject}"
-    

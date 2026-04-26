@@ -104,7 +104,8 @@ class AuthenticationTest(TestCase):
     Test authentication functionality with the CustomModelBackend.
     
     These tests verify that email-based authentication works correctly
-    and that the backend properly rejects invalid credentials or inactive users.
+    and that the backend rejects username-based login, invalid credentials,
+    and inactive users.
     """
     def setUp(self):
         """Create a test user and RequestFactory for authentication tests."""
@@ -124,21 +125,17 @@ class AuthenticationTest(TestCase):
         user = self.backend.authenticate(request, username='auth@example.com', password='authpass123')
         self.assertEqual(user, self.user)
 
-    def test_authenticate_with_username(self):
-        """Test authentication using username (future-proofing for username-based login)."""
+    def test_authenticate_with_username_is_rejected(self):
+        """Test authentication using username is rejected under email-only policy."""
         request = self.factory.get('/')
         user = self.backend.authenticate(request, username='authuser', password='authpass123')
-        self.assertEqual(user, self.user)
+        self.assertIsNone(user)
 
     def test_authenticate_case_insensitive(self):
-        """Test that authentication is case-insensitive for email and username."""
+        """Test that authentication is case-insensitive for email."""
         request = self.factory.get('/')
-        # Test email case-insensitivity
         user_upper = self.backend.authenticate(request, username='AUTH@EXAMPLE.COM', password='authpass123')
         self.assertEqual(user_upper, self.user)
-        # Test username case-insensitivity
-        user_mixed = self.backend.authenticate(request, username='AuthUser', password='authpass123')
-        self.assertEqual(user_mixed, self.user)
 
     def test_authenticate_wrong_password(self):
         """Test authentication with wrong password."""
@@ -291,6 +288,20 @@ class ContactMessageModelTest(TestCase):
         self.assertEqual(message.subject, 'Test Subject')
         self.assertEqual(message.message, 'Test message content')
         self.assertIsNotNone(message.created_at)
+
+
+class ContactViewAccessTest(TestCase):
+    """Test access rules for contact view submissions."""
+
+    def test_anonymous_post_is_blocked_and_redirected(self):
+        """Anonymous users should not be able to send contact form messages."""
+        response = self.client.post(
+            reverse('portfolio_app:contact'),
+            {'subject': 'Test Subject', 'message': 'This is a valid-length message payload.'}
+        )
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse('portfolio_app:contact'))
+        self.assertEqual(ContactMessage.objects.count(), 0)
 
 
 class ActivationFlowTest(TestCase):

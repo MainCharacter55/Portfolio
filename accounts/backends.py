@@ -1,6 +1,6 @@
 # accounts/backends.py
 """
-Custom authentication backend for email-based login with future username fallback.
+Custom authentication backend for email-based login.
 
 This backend is designed to work with the CustomUser model and is compatible
 with django-axes for brute-force protection.
@@ -9,7 +9,6 @@ with django-axes for brute-force protection.
 
 from django.contrib.auth.backends import ModelBackend
 from django.contrib.auth import get_user_model
-from django.db.models import Q
 from typing import Optional
 
 # Grab the configured user model (CustomUser)
@@ -17,11 +16,9 @@ UserModel = get_user_model()
 
 class CustomModelBackend(ModelBackend):
     """
-    Authentication backend that supports email or username lookup.
+    Authentication backend that supports email lookup.
 
-    Although the project currently uses email for login, this backend
-    is prepared to fall back to the username field as well. It is
-    placed after AxesBackend in `AUTHENTICATION_BACKENDS` so that
+    This backend is placed after AxesBackend in `AUTHENTICATION_BACKENDS` so that
     brute-force protection still wraps it.
     """
     def authenticate(
@@ -32,11 +29,11 @@ class CustomModelBackend(ModelBackend):
         **kwargs
     ) -> Optional["UserModel"]:
         """
-        Authenticate a user by email or username.
+        Authenticate a user by email.
 
         Args:
             request: The HTTP request object (required by AxesBackend).
-            username: Email or username to authenticate (case-insensitive).
+            username: Email to authenticate (case-insensitive).
             password: The user's plaintext password.
             **kwargs: Additional keyword arguments (ignored).
 
@@ -49,15 +46,9 @@ class CustomModelBackend(ModelBackend):
         if username is None or password is None:
             return None
 
-        # Attempt to fetch the user by either email or username, ignoring case.
-        # Using iexact (case-insensitive) allows login with 'User@Example.com'
-        # or 'USER@EXAMPLE.COM' matching 'user@example.com' in the database.
-        # This is the core logic that would allow 'either' login in the future
-        # while still functioning as email-only today.
+        # Email-only lookup to avoid ambiguous matches and enforce policy.
         try:
-            user = UserModel.objects.get(
-                Q(email__iexact=username) | Q(username__iexact=username)
-            )
+            user = UserModel.objects.get(email__iexact=username)
         except UserModel.DoesNotExist:
             return None
 

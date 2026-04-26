@@ -574,7 +574,7 @@ msgstr "ユーザー:"
 
 #: .\templates\base.html:46
 msgid "!"
-msgstr " [接続中]"
+msgstr "!"
 
 #: .\templates\base.html:53
 msgid "Manage Account"

@@ -16,7 +16,6 @@ from django.shortcuts import render, redirect
 from django.views.generic import CreateView, TemplateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.decorators import login_required
 
 # Django utilities
 from django.utils import timezone
@@ -57,6 +56,11 @@ def contact_view(request):
         Rendered contact.html template with form, or redirect on successful submission.
     """
     if request.method == "POST":
+        # Keep guest-facing page design, but block unauthenticated mail submission.
+        if not request.user.is_authenticated:
+            messages.error(request, "SYSTEM_ERROR: AUTH_GATE required for uplink transmission.")
+            return redirect('portfolio_app:contact')
+
         form = ContactForm(request.POST)
         one_hour_ago = timezone.now() - timedelta(hours=1) # Rate limit check: max 5 messages per user per hour
         recent_count = ContactMessage.objects.filter(

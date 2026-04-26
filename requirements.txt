@@ -1,5 +1,5 @@
-asgiref==3.10.0
-Django==5.2.8
-django-axes==8.1.0
-python-dotenv==1.2.1
-sqlparse==0.5.3
+asgiref==3.11.1
+Django==5.2.13
+django-axes==8.3.1
+python-dotenv==1.2.2
+sqlparse==0.5.5

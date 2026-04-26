@@ -76,6 +76,13 @@ main /* or whatever wrapper holds page content */ {
     padding-top: var(--navbar-height);
 }
 
+.sector-locked-page {
+    min-height: var(--viewport-content-size);
+    padding-top: calc(var(--navbar-height) + clamp(0.75rem, 2dvh, 1.25rem));
+    padding-bottom: clamp(1.25rem, 3dvh, 2rem);
+    box-sizing: border-box;
+}
+
 /* footer – optional, but ensure it never overlaps */
 footer {
     margin-top: auto;
@@ -448,6 +455,12 @@ body.auth-page {
     #contact-page.viewport-main-page {
         min-height: var(--viewport-content-size);
         padding-top: calc(var(--navbar-height) + 1rem);
+    }
+
+    .sector-locked-page {
+        min-height: var(--viewport-content-size);
+        padding-top: calc(var(--navbar-height) + 1rem);
+        padding-bottom: 1rem;
     }
 
     .spotify-wrapper {
